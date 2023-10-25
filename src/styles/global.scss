@@ -1,0 +1,21 @@
+@import "./color.module";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Montserrat";
+}
+
+a {
+    color: $dark-blue;
+    text-decoration: none;
+}
+p{
+    color: $dark-blue;
+}
+
+body {
+    background-color: $white;
+}
