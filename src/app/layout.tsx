@@ -1,4 +1,5 @@
 import SearchInput from "@/entities/SearchInput/SearchInput";
+import { Footer } from "@/widgets/Footer/Footer";
 import Header from "@/widgets/Header/Header";
 
 
@@ -13,6 +14,7 @@ export default function RootLayout({
       <body>        
         <Header/>
         {children}
+        <Footer/>
       </body>
     </html>
   );

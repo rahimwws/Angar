@@ -1,0 +1,35 @@
+@import "../../styles/color.module.scss";
+
+
+.recommended-section{
+    padding-top: 5%;
+    padding-left: 5%;
+    overflow: hidden;
+    .cart-slider{
+        flex: 0 0 100%;
+        min-width: 0;
+    }
+    .recommended-container{
+        gap: 2%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .recommended-text{
+        color: $dark-blue;
+        padding-right: 5%;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        h1{
+            font-size: 32px;
+        }
+        p{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 18px;
+        }
+    }
+}

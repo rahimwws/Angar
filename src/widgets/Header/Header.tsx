@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import "./Header.scss";
 
-import logo from "./assets/logo.png";
+import logo from "../../../public/logo.svg";
 import shop from "./assets/icons/shop.png";
 import user from "./assets/icons/user.png";
 
@@ -17,7 +17,7 @@ const Header = (props: Props) => {
     <header>
       <HeaderInfo />
       <div className="main-header">
-        <Image src={logo} alt="logo" />
+        <Image src={logo} alt="logo" width={110} height={110} />
         <Nav />
         <SearchInput />
         <div className="assets">

@@ -1,0 +1,11 @@
+@import "../../styles/color.module.scss";
+
+
+.button{
+    border-radius: 6px;
+    font-size: 18px;
+    border: none;
+    background-color: $black;
+    color: $white;
+    padding: 5px 15px;
+}

@@ -6,7 +6,7 @@ type Props = {}
 
 const Nav = (props: Props) => {
   return (
-    <nav>
+    <nav className='header-nav'>
       <ul>
         <li>Компания</li>
         <li>Контакт</li>

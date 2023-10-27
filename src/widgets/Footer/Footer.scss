@@ -1,0 +1,80 @@
+@import "../../styles/color.module.scss";
+
+
+footer {
+    margin-top: 5%;
+    background-color: $black;
+    padding: 0 5%;
+    padding-bottom: 5px;
+    .footer-head {
+        p {
+            font-size: 18px;
+            color: $white;
+        }
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .footer-text {
+            flex-basis: 60%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            p:first-child {
+                span {
+                    color: $red;
+                }
+            }
+
+            span {
+                color: $dark-gray;
+            }
+
+            button {
+                text-transform: uppercase;
+                background-color: $red;
+                padding: 12px 22px;
+                border-radius: 3px;
+                font-size: 16px;
+                font-weight: 600;
+                color: $white;
+            }
+        }
+    }
+    p {
+        color: $white;
+    }
+    .nav-footer{
+        display: flex;
+        align-items:center;
+        justify-content: space-between;
+        ul{
+            list-style: none;
+        }
+        li {
+            font-size: 18px;
+            color: $white;
+            margin: 10px 0;
+        }
+        .footer-catalog{
+            p{
+                font-size: 18px;
+            }
+            .catalog-item{
+                li{
+                    color: $dark-gray;
+                    font-size: 16px;
+                }
+                display: flex;
+                align-items:center;
+                justify-content: space-between;
+                gap: 40px;
+            }
+        }
+    }
+    .footer-end{
+        margin-bottom: 5px;
+    }
+}

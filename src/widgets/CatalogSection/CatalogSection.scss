@@ -1,0 +1,53 @@
+@import "../../styles/color.module.scss";
+
+.catalog-section {
+padding: 0 5%;
+    .CatalogSlider {
+
+        margin-top: 5%;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+
+        .CatalogContainer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 5%;
+        }
+
+        .CatalogSectionItem {
+            flex: 0 0 100%;
+            min-width: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .assets {
+            margin-top: 3%;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            align-self: center;
+
+            button {
+                cursor: pointer;
+                background-color: inherit;
+                border: none;
+            }
+
+            p {
+                color: $dark-blue;
+                opacity: .5;
+            }
+
+            .Current {
+                color: $dark-blue;
+                opacity: 1;
+                font-size: 22px;
+                font-weight: 700;
+            }
+        }
+    }
+}
