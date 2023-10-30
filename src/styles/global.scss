@@ -17,8 +17,12 @@ p{
 }
 
 body {
+    position: relative;
     background-color: $white;
 }
 button{
     border: none;
+}
+.blur{
+    filter: blur(10px);
 }

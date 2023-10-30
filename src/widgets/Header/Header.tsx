@@ -1,5 +1,9 @@
-import React from "react";
+"use client"
+
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
+
+
 import "./Header.scss";
 
 import logo from "../../../public/logo.svg";
@@ -9,23 +13,45 @@ import user from "./assets/icons/user.png";
 import Nav from "@/shared/Nav/Nav";
 import SearchInput from "@/entities/SearchInput/SearchInput";
 import { HeaderInfo } from "@/shared/HeaderInfo/HeaderInfo";
+import { MegaMenu } from "@/entities/MegaMenu/MegaMenu";
+import { AuthModal } from "@/entities/AuthModal/AuthModal";
 
 type Props = {};
 
 const Header = (props: Props) => {
+  const [isOpenedMain, setIsOpenedsMain] = useState(false)
+  const [isAuthModal, setIsAuthModal] = useState(true)
+
+  useEffect(() => {
+
+    const main: any | HTMLElement = document.querySelector("main");
+    if (isOpenedMain) {
+      main.className = "blur" as string
+    }else{
+      main.classList.remove("blur")
+    }
+    main.addEventListener("click",()=>{
+      setIsOpenedsMain(false)
+    })
+  }, [isOpenedMain])
+
   return (
-    <header>
-      <HeaderInfo />
-      <div className="main-header">
-        <Image src={logo} alt="logo" width={110} height={110} />
-        <Nav />
-        <SearchInput />
-        <div className="assets">
-          <Image src={user} alt="user" />
-          <Image src={shop} alt="shop" />
+    <>
+      <header>
+        <HeaderInfo />
+        <div className="main-header">
+          <Image src={logo} alt="logo" width={110} height={110} />
+          <Nav openCatalog={setIsOpenedsMain} check = {isOpenedMain} />
+          <SearchInput />
+          <div className="assets">
+            <Image src={user} alt="user" />
+            <Image src={shop} alt="shop" />
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
+      <MegaMenu isOpen={isOpenedMain} close={setIsOpenedsMain} />
+      <AuthModal class={isAuthModal ? "auth-modal" : "none"} />
+    </>
   );
 };
 

@@ -1,0 +1,15 @@
+.mega-menu {
+    width: 100%;
+    background-color: white;
+    z-index: 99;
+    top: 5%;
+    left: 0;
+    position: absolute;
+    padding: 20px 0;
+
+    .menu-catalog{
+        margin-left: 5%;
+        gap: 5%;
+        display: flex;
+    }
+}

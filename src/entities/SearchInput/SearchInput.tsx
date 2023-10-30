@@ -1,6 +1,6 @@
 import React from "react";
 
-import Input from "@/shared/Input/Input";
+import Input from "@/shared/Inputs/Input";
 
 import "./styles/style.scss";
 

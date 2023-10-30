@@ -1,0 +1,56 @@
+@import "../../../styles/color.module.scss";
+
+
+
+.items {
+    display: flex;
+    flex-direction: column;
+    align-self: start;
+    ul {
+        list-style: none;
+
+        align-self: flex-start;
+    }
+
+    font-size: 18px;
+    font-weight: 500;
+    color: $dark-blue;
+
+
+    li {
+        cursor: pointer;
+        margin: 25px 0;
+    }
+}
+
+.none {
+    display: none;
+}
+
+.main-menu {
+    ul {
+        list-style: none;
+    }
+
+    border-radius: 10px;
+    border: 1px solid $gray;
+    border-bottom: none;
+
+    li {
+        border-bottom: 1px solid $gray;
+        color: $dark-blue;
+        cursor: pointer;
+        padding: 20px 10px;
+        width: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-align: start;
+    }
+
+    .red {
+        border-color: $red;
+        background-color: $red;
+        color: $white;
+    }
+}
