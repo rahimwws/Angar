@@ -1,9 +1,20 @@
 .auth-modal{
+    border-radius: 10px;
+    padding: 50px 20px;
     width: 450px;
     display: flex;
     flex-direction: column;
     position: absolute;
     z-index: 99;
     left: 40%;
+    top: 10%;
     background-color: white;
+    input{
+        margin-top: -15px;
+        margin-bottom: 5%;
+    }
+    h1{
+        text-align: center;
+        margin-bottom: 5%;
+    }
 }

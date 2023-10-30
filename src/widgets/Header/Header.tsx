@@ -20,7 +20,7 @@ type Props = {};
 
 const Header = (props: Props) => {
   const [isOpenedMain, setIsOpenedsMain] = useState(false)
-  const [isAuthModal, setIsAuthModal] = useState(true)
+  const [isAuthModal, setIsAuthModal] = useState(false)
 
   useEffect(() => {
 
@@ -44,13 +44,13 @@ const Header = (props: Props) => {
           <Nav openCatalog={setIsOpenedsMain} check = {isOpenedMain} />
           <SearchInput />
           <div className="assets">
-            <Image src={user} alt="user" />
+            <Image src={user} alt="user" onClick={()=> isAuthModal ? setIsAuthModal(false): setIsAuthModal(true)} />
             <Image src={shop} alt="shop" />
           </div>
         </div>
       </header>
       <MegaMenu isOpen={isOpenedMain} close={setIsOpenedsMain} />
-      <AuthModal class={isAuthModal ? "auth-modal" : "none"} />
+      <AuthModal check={isAuthModal} open = {setIsAuthModal} />
     </>
   );
 };
