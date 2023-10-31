@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import "./style.scss"
 import { PageInput } from '@/shared/Inputs/PageInput'
@@ -12,16 +12,18 @@ type Props = {
 }
 
 export const AuthModal = (props: Props) => {
-
     useEffect(() => {
 
         const main: any | HTMLElement = document.querySelector("main");
         if (props.check) {
             main.className = "blur" as string
+            main.addEventListener("click",()=>{
+                props.open(false)
+              })
         } else {
             main.classList.remove("blur")
         }
-    })
+    },[])
     return (
         <div className={props.check ? "auth-modal" : "none"}>
             <h1>Вход</h1>

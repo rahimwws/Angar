@@ -1,0 +1,30 @@
+@import "../../styles/color.module.scss";
+
+.catalog-page-nav {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+
+    .catalog-blocks {
+        display: flex;
+        align-items: center;
+        gap: 2%;
+    }
+
+    .catalog-sort {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        p {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
+            font-size: 18px;
+            color: $dark-blue;
+        }
+    }
+}

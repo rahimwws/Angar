@@ -1,6 +1,6 @@
 import React from "react";
 
-import "@/styles/global.scss";
+
 import { Slider } from "@/shared/Slider/Slider";
 import { CatalogSection } from "@/widgets/CatalogSection/CatalogSection";
 import { RecommendedSectiion } from "@/widgets/RecommendedSection/RecommendedSectiion";

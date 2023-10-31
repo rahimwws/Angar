@@ -1,0 +1,11 @@
+@import "../../styles/color.module.scss";
+
+.catalog-block{
+    
+    width: max-content;
+    background-color: $gray;
+    padding: 13px 30px;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 18px;
+}

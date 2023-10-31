@@ -1,0 +1,74 @@
+@import "../../styles/color.module.scss";
+
+
+.catalog-filter {
+    border-radius: 10px;
+    margin: 3% 5%;
+    border: 1px solid $gray;
+    width: 279px;
+
+    h2 {
+        padding: 10px 0 10px 0;
+        font-size: 24px;
+        color: $dark-blue;
+        text-align: center;
+        border-bottom: 1px solid $gray ;
+    }
+
+    .price-slider {
+        margin-top: 5%;
+        padding: 0 5%;
+
+        span {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        .blocks {
+            margin: 10% 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .price-block {
+            outline: none;
+            text-align: center;
+            width: 120px;
+            padding: 10px 0;
+            font-size: 18px;
+            font-weight: 500;
+            color: $dark-gray;
+            border: 1px solid $gray;
+        }
+
+        .price-block:first-child {
+            border-radius: 10px 0px 0px 10px;
+        }
+
+        .price-block:last-child {
+            border-radius: 0px 10px 10px 0px;
+        }
+
+    }
+    .catalog-slider-container{
+        margin: 5% 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        // position: relative;
+        .slider{
+            -webkit-appearance: none;  /* Override default CSS styles */
+            appearance: none;
+            background: $gray;
+            height: 10px;
+        }
+        .slider:last-child{
+            margin-left: -1%;
+        }
+    }
+
+}
