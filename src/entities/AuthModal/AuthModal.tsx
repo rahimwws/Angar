@@ -23,7 +23,7 @@ export const AuthModal = (props: Props) => {
         } else {
             main.classList.remove("blur")
         }
-    },[])
+    })
     return (
         <div className={props.check ? "auth-modal" : "none"}>
             <h1>Вход</h1>

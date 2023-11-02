@@ -11,10 +11,6 @@ export const CatalogPageProducts = (props: Props) => {
         <section className='catalog-page-products'>
             <CatalogFilter />
             <div className="catalog-page-items">
-
-                <CatalogProducts />
-                <CatalogProducts />
-                <CatalogProducts />
                 <CatalogProducts />
             </div>
         </section>

@@ -15,6 +15,7 @@ import SearchInput from "@/entities/SearchInput/SearchInput";
 import { HeaderInfo } from "@/shared/HeaderInfo/HeaderInfo";
 import { MegaMenu } from "@/entities/MegaMenu/MegaMenu";
 import { AuthModal } from "@/entities/AuthModal/AuthModal";
+import Link from "next/link";
 
 type Props = {};
 
@@ -40,13 +41,17 @@ const Header = (props: Props) => {
       <header>
         <HeaderInfo />
         <div className="main-header">
+          <Link href="/">
           <Image src={logo} alt="logo" width={110} height={110} />
+          </Link>
           <Nav openCatalog={setIsOpenedsMain} check = {isOpenedMain} />
           <SearchInput />
           <div className="assets">
             <Image src={user} alt="user" onClick={()=> isAuthModal ? setIsAuthModal(false): setIsAuthModal(true)} />
+            <Link href="/cart">
             <Image src={shop} alt="shop" />
-          </div>
+            </Link>
+          </div> 
         </div>
       </header>
       <MegaMenu isOpen={isOpenedMain} close={setIsOpenedsMain} />
