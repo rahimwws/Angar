@@ -1,9 +1,16 @@
 @import "../../styles/color.module.scss";
 
-
+.none{
+    display: none;
+}
 .catalog-filter {
+    height: max-content;
+    .catalog-arrow{
+        cursor: pointer;
+     
+    }
     border-radius: 10px;
-    margin: 3% 5%;
+    margin: 3% 0;
     border: 1px solid $gray;
     width: 279px;
 
@@ -15,17 +22,17 @@
         border-bottom: 1px solid $gray ;
     }
 
+    .catalog-name {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 20px;
+        font-weight: 500;
+    }
     .price-slider {
         margin-top: 5%;
         padding: 0 5%;
 
-        span {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            font-size: 20px;
-            font-weight: 500;
-        }
 
         .blocks {
             margin: 10% 0;
@@ -54,20 +61,49 @@
         }
 
     }
-    .catalog-slider-container{
+
+    .catalog-slider-container {
         margin: 5% 0;
         display: flex;
         align-items: center;
         justify-content: center;
+
         // position: relative;
-        .slider{
-            -webkit-appearance: none;  /* Override default CSS styles */
+        .slider {
+            -webkit-appearance: none;
+            /* Override default CSS styles */
             appearance: none;
             background: $gray;
-            height: 10px;
+            height: 5px;
         }
-        .slider:last-child{
-            margin-left: -1%;
+
+        .slider:last-child {
+            // margin-left: -1%;
+        }
+
+        .slider::-webkit-slider-thumb {
+            // -webkit-appearance: none;
+            // appearance: none;
+            background-color: $red;
+        }
+    }
+    .more-filter{
+        margin: 10% 0;
+        border-top: 1px solid $gray;
+        padding: 10% 5% 0 5%;
+        .filter-items{
+            margin-top: 5%;
+            .item{
+                margin: 2% 0;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                p{
+                    color: $dark-gray;
+                    font-weight: 500;
+                    font-size: 18px;
+                }
+            }    
         }
     }
 
