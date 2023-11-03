@@ -1,0 +1,9 @@
+@import "../../../styles/color.module.scss";
+
+.product-image-block{
+ 
+    border-radius: 10px;
+    padding: 5px;
+    width: max-content;
+    border: 1px solid $dark-gray;
+}

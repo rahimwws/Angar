@@ -1,5 +1,5 @@
-import { CatalogPageNav } from '@/entities/CatalogPageNav/CatalogPageNav'
 import { PageHeadInfo } from '@/shared/PageHeadInfo/PageHeadInfo'
+import { ProductPageInfo } from '@/widgets/ProductPageInfo/ProductPageInfo'
 import React from 'react'
 
 type Props = {
@@ -12,6 +12,7 @@ const ProductPage = ({params}:Props) => {
   return (
     <main>
       <PageHeadInfo/>
+      <ProductPageInfo/>
     </main>
   )
 }

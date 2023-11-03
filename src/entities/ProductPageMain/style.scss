@@ -1,0 +1,18 @@
+@import "../../styles/color.module.scss";
+
+
+.product-page-main {
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .images{
+        display: flex;
+        align-items: center;
+        .blocks{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+    }
+}

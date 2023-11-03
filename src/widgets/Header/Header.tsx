@@ -33,7 +33,7 @@ const Header = (props: Props) => {
     }
     main.addEventListener("click",()=>{
       setIsOpenedsMain(false)
-    })
+    })  
   }, [isOpenedMain])
 
   return (

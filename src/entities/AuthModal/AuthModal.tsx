@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 
 import "./style.scss"
 import { PageInput } from '@/shared/Inputs/PageInput'
@@ -16,12 +16,12 @@ export const AuthModal = (props: Props) => {
 
         const main: any | HTMLElement = document.querySelector("main");
         if (props.check) {
-            main.className = "blur" as string
+            main.className = "modal-effect" as string
             main.addEventListener("click",()=>{
                 props.open(false)
               })
         } else {
-            main.classList.remove("blur")
+            main.classList.remove("modal-effect")
         }
     })
     return (

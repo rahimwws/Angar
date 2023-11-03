@@ -1,0 +1,105 @@
+@import "../../styles/color.module.scss";
+
+
+.product-page-about {
+    padding-top: 3%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    .product-page-price {
+        display: flex;
+        flex-direction: column;
+        padding: 3%;
+        width: 500px;
+        box-shadow: 0px 4px 19px 0px rgba(0, 0, 0, 0.07);
+        border-radius: 10px;
+        margin: 3% 0 ;
+        .price-id {
+            font-weight: 500;
+            color: $dark-gray;
+        }
+
+        .price {
+            margin: 3% 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+
+            h1 {
+                font-weight: 400;
+                text-transform: uppercase;
+            }
+
+            p {
+                color: $dark-gray;
+                text-decoration: line-through;
+            }
+
+            .sale {
+                p {
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    color: $white;
+                }
+
+                background-color: $red;
+                padding: 5px 10px;
+                border-radius:5px;
+            }
+        }
+
+        .quantity {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 7%;
+            gap: 20px;
+
+            p {
+                font-size: 18px;
+
+            }
+
+            .quantity-buttons {
+                span {
+                    font-size: 18px;
+                }
+
+                button {
+                    margin: 0 20px;
+                    width: 60px;
+                    height: 40px;
+                    border-radius: 50px;
+                }
+            }
+        }
+
+        button {
+            height: 50px;
+            width: 50%;
+            align-self: center;
+            font-size: 22px;
+        }
+    }
+
+    .product-assets {
+        padding: 2%;
+        border-radius: 10px;
+        width: 500px;
+        border: 1px solid $gray;
+        display: flex;
+        flex-direction: column;
+        ul{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            list-style: none;
+            li{
+                display: flex;
+                gap: 10px;
+                align-items: center;
+            }
+        }
+    }
+}
