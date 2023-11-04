@@ -1,0 +1,16 @@
+@import "../../styles/color.module.scss";
+
+.same-products{
+    margin: 0 5%;
+    h1{
+        margin-bottom: 3%;
+        font-weight: 500;
+        color: $dark-blue;
+    }
+    .same-products-items{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}

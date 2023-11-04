@@ -8,6 +8,6 @@ type Props = {}
 
 export const ProductBlockImage = (props: Props) => {
   return (
-      <Image className='product-image-block' src={image} alt='product' width={100} height={100} />
+      <Image className='product-image-block' src={image} alt='product' width={70} height={70} />
   )
 }

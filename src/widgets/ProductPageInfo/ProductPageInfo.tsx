@@ -1,3 +1,4 @@
+import { AboutProduct } from '@/entities/AboutProduct/AboutProduct'
 import { ProductPageMain } from '@/entities/ProductPageMain/ProductPageMain'
 import React from 'react'
 
@@ -7,6 +8,7 @@ export const ProductPageInfo = (props: Props) => {
   return (
     <div>
         <ProductPageMain/>
+        <AboutProduct/>
     </div>
   )
 }

@@ -1,0 +1,46 @@
+@import "../../styles/color.module.scss";
+
+.about-product{
+    margin: 5% 0;
+    .main-text{
+        display: flex;
+        align-items: center;
+        gap: 10%;
+        margin: 0 5%;
+        h2{
+            font-weight: 500;
+            color: $dark-blue;
+            cursor: pointer;
+            padding-bottom: 5px;
+            width: max-content;
+            font-size: 20px;
+            &:hover{
+                transition: all .5s;
+                border-bottom: 1px solid $red;
+            }
+            // &:current{
+            // }
+        }
+        .border{
+            transition: all .5s;
+            border-bottom: 1px solid $red;
+            
+        }
+    }
+    h3{
+        color: $dark-blue;
+        margin: 3% 5% 0 5%;
+    }
+    .info{
+        margin: 1% 5% 0 5%;
+        display: flex;
+        align-items: center;
+        gap: 10%;
+        p{
+            margin: 0;
+        }
+    }
+    p{
+        margin: 1%  5%  0 5%;
+    }
+}

@@ -10,7 +10,8 @@
         display: flex;
         flex-direction: column;
         padding: 3%;
-        width: 500px;
+        width: max-content;
+        // width: 500px;
         box-shadow: 0px 4px 19px 0px rgba(0, 0, 0, 0.07);
         border-radius: 10px;
         margin: 3% 0 ;
@@ -86,7 +87,8 @@
     .product-assets {
         padding: 2%;
         border-radius: 10px;
-        width: 500px;
+        width: max-content;
+        // width: 500px;
         border: 1px solid $gray;
         display: flex;
         flex-direction: column;
