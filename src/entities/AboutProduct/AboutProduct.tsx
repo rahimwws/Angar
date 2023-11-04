@@ -16,7 +16,7 @@ export const AboutProduct = (props: Props) => {
         <h2 onClick={()=>setInfo(1)} className={Info === 1 ? "border" : ""}>О товаре</h2>
       </div>
       <hr />
-      <h3>Ниппель оцинкованный DN 15 (1/2")</h3>
+      <h3>Ниппель оцинкованный DN 15 (1/2)</h3>
       <div className={Info === 0 ? "" : "none"}>
         <div className="info">
           <ProductInfo />
