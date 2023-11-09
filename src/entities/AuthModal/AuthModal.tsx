@@ -1,10 +1,11 @@
-"use client"
+    "use client"
 
 import React, { useEffect } from 'react'
 
 import "./style.scss"
 import { PageInput } from '@/shared/Inputs/PageInput'
 import { Button } from '@/shared/Button/Button'
+import Link from 'next/link'
 
 type Props = {
     check: any,
@@ -29,7 +30,9 @@ export const AuthModal = (props: Props) => {
             <h1>Вход</h1>
             <PageInput placeholder='ff' text='Номер' />
             <PageInput placeholder='ff' text='Имя' />
-            <Button text='Авторизоваться' />
+            <Link href="/profile" className='profile-link' onClick={()=>props.open(false)}>
+            <Button text='Авторизоваться'  />
+            </Link>           
             <p>Нету аккаунта?</p>
         </div>
     )

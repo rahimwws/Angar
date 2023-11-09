@@ -1,0 +1,40 @@
+@import "../../styles/color.module.scss";
+
+
+
+.profile-page-nav-item{
+    img{
+
+        .path{
+            
+            stroke: $black;
+        }
+    }
+    cursor: pointer;
+    padding: 20px 50px 20px 20px;
+    gap: 10px;
+    width: max-content;
+    display: flex;
+    align-items: center;
+    background-color: $white;
+    border: 1px solid $gray;
+    p{
+        color: $black;
+    }
+    width: max-content;
+    box-shadow: 0px 4px 19px 0px rgba(23, 27, 32, 0.07);
+}
+
+.profile-page-nav-item-dark-mode{
+    @extend .profile-page-nav-item;
+    
+    p{
+        color: $white;
+    }
+    .path{
+        
+        stroke: $white;
+    }
+    border: none;
+    background-color: $black;
+}
