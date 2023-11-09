@@ -1,4 +1,3 @@
-import { CatalogFilter } from '@/entities/CatalogFilter/CatalogFilter'
 import { CatalogPageNav } from '@/entities/CatalogPageNav/CatalogPageNav'
 import { PageHeadInfo } from '@/shared/PageHeadInfo/PageHeadInfo'
 import { CatalogPageProducts } from '@/widgets/CatalogPageProducts/CatalogPageProducts'

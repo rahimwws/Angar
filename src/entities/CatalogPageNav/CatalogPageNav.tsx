@@ -8,7 +8,7 @@ type Props = {}
 
 export const CatalogPageNav = (props: Props) => {
     return (
-        <div className='catalog-page-nav'>
+        <section className='catalog-page-nav'>
             <div className="catalog-blocks">
                 <CatalogBlock />
                 <CatalogBlock />
@@ -20,6 +20,6 @@ export const CatalogPageNav = (props: Props) => {
                 <p>Сортировать по <CatalogArrow/></p>
                 <CatalogFormList/>
             </div>
-        </div>
+        </section>
     )
 }

@@ -7,7 +7,7 @@ type Props = {}
 
 export const PageHeadInfo = (props: Props) => {
   return (
-    <div className='page-head-info'>
+    <section className='page-head-info'>
         <h1>Стройматериалы</h1>
         <span>
             <p>Главная</p>
@@ -17,6 +17,6 @@ export const PageHeadInfo = (props: Props) => {
             <p>Стройматериалы</p>
         </span>
         
-    </div>
+    </section>
   )
 }

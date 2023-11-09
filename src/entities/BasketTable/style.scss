@@ -1,0 +1,36 @@
+@import "../../styles/color.module.scss";
+
+.basket-table{
+    flex-basis: 80%;
+    padding: 2% 0;
+    border: 1px solid $gray;
+    display: flex;
+    flex-direction: column;
+    .table-header{
+        padding: 0 2%;
+        border-bottom: 1px solid $gray;
+        padding-bottom: 2%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        h2{
+            color: $dark-gray;
+            font-size: 18px;
+            font-weight: 500;
+        }
+        h2:nth-child(1){
+            flex-basis: 35%;
+        }
+        h2:nth-child(2){
+            flex-basis: 5%;
+        }
+        h2:nth-child(3){
+            flex-basis: 15%;
+        }
+        h2:nth-child(4){
+        flex-basis: 10%;
+        }
+
+    }
+
+}

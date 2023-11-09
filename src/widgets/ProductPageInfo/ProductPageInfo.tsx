@@ -6,9 +6,9 @@ type Props = {}
 
 export const ProductPageInfo = (props: Props) => {
   return (
-    <div>
+    <section>
         <ProductPageMain/>
         <AboutProduct/>
-    </div>
+    </section>
   )
 }
