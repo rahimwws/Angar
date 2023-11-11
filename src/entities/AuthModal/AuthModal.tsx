@@ -28,8 +28,8 @@ export const AuthModal = (props: Props) => {
     return (
         <div className={props.check ? "auth-modal" : "none"}>
             <h1>Вход</h1>
-            <PageInput placeholder='ff' text='Номер' />
-            <PageInput placeholder='ff' text='Имя' />
+            <PageInput placeholder='ff' text='Номер' number = {true} />
+            <PageInput placeholder='ff' text='Имя' number = {false} />
             <Link href="/profile" className='profile-link' onClick={()=>props.open(false)}>
             <Button text='Авторизоваться'  />
             </Link>           
