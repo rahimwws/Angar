@@ -1,5 +1,5 @@
 import { PageHeadInfo } from '@/shared/PageHeadInfo/PageHeadInfo'
-import { ProfilePageSection } from '@/widgets/ProfilyPageSection/ProfilePageSection'
+import { ProfilePageSection } from '@/widgets/ProfilePageSection/ProfilePageSection'
 import React from 'react'
 
 type Props = {}

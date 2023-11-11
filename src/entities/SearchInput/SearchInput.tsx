@@ -25,7 +25,7 @@ const SearchInput = (props: Props) => {
           fill="#292D32"
         />
       </svg>
-      <Input />
+      <Input placeholder = "Поиск"/>
     </div>
   );
 };

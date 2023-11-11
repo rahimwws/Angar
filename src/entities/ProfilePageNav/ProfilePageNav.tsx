@@ -16,23 +16,29 @@ import heartDark from './icons/HeartDark.svg'
 import exit from './icons/Exit.svg'
 import exitDark from './icons/ExitDark.svg'
 
-type Props = {}
+type Props = {
+  section:any,
+  setSection:any
+}
 
 export const ProfilePageNav = (props: Props) => {
   const [DarkMode, setDarkMode] = useState(1)
-
+  const HandleChangeAll = (id:number)=>{
+    setDarkMode(id) 
+    props.setSection(id)
+  }
   return (
     <aside className='profile-nav'>
-      <div className="profile-nav-item" onClick={()=>setDarkMode(1)}>
+      <div className="profile-nav-item" onClick={()=>HandleChangeAll(1)}>
         <ProfilePageNavItem class={DarkMode === 1 ? 'profile-page-nav-item-dark-mode' : "profile-page-nav-item"} svg={DarkMode === 1 ? profile : profileDark}/>
       </div>
-      <div className="profile-nav-item" onClick={()=>setDarkMode(2)}>
+      <div className="profile-nav-item" onClick={()=>HandleChangeAll(2)}>
         <ProfilePageNavItem class={DarkMode === 2 ? 'profile-page-nav-item-dark-mode' : "profile-page-nav-item"}  svg={DarkMode === 2 ? option : optionDark}/>
       </div>
-      <div className="profile-nav-item" onClick={()=>setDarkMode(3)}>
+      <div className="profile-nav-item" onClick={()=>HandleChangeAll(3)}>
         <ProfilePageNavItem class={DarkMode === 3 ? 'profile-page-nav-item-dark-mode' : "profile-page-nav-item"} svg={DarkMode === 3 ? heart : heartDark}/>
       </div>
-      <div className="profile-nav-item" onClick={()=>setDarkMode(4)}>
+      <div className="profile-nav-item" onClick={()=>HandleChangeAll(4)}>
         <ProfilePageNavItem class={DarkMode === 4 ? 'profile-page-nav-item-dark-mode' : "profile-page-nav-item"} svg={DarkMode === 4 ? exit : exitDark}/>
       </div>
     </aside>
