@@ -1,6 +1,7 @@
 import React from 'react'
 
 import "./Nav.scss"
+import Link from 'next/link'
 
 type Props = {
   check:any,
@@ -16,7 +17,12 @@ const Nav = (props: Props) => {
       <ul>
         <li>Компания</li>
         <li>Контакт</li>
-        <li>Услуги</li>
+        
+        <li>
+          <Link href="/services">
+          Услуги
+          </Link>
+          </li>
         <li onClick={()=>props.check ? props.openCatalog(false) : props.openCatalog(true)}>Каталог</li>
       </ul>
     </nav>
