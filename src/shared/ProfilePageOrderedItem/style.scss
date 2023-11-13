@@ -1,0 +1,23 @@
+@import "../../styles/color.module.scss";
+
+.profile-page-ordered-item{
+    border-top: 1px solid $gray;
+    border-bottom: 1px solid $gray;
+    padding: 2%;
+    color: $dark-blue;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .ordered-price{
+        font-weight: 500;
+    }
+    .ordered-data{
+        font-weight: 500;
+    }
+    .ordered-button{
+        padding: 15px;
+        background-color: $gray;
+        border-radius: 5px;
+    }
+}

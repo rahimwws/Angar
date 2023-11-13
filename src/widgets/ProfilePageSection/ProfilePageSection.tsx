@@ -4,7 +4,7 @@ import "./style.scss"
 
 
 import { ProfileChange } from '@/entities/ProfilePageContents'
-import { ProfileOrderedItems } from '@/entities/ProfilePageContents'
+import { ProfileOrdered } from '@/entities/ProfilePageContents'
 
 import { ProfilePageNav } from '@/entities/ProfilePageNav/ProfilePageNav'
 import { ProfileFavItems } from '@/entities/ProfilePageContents/ProfileFavItems'
@@ -17,7 +17,7 @@ export const ProfilePageSection = (props: Props) => {
   return (
     <section className='profile-page-section'>
       <ProfilePageNav section={section} setSection={setSection} />
-      {section === 1 ? <ProfileChange /> : section === 2 ? <ProfileOrderedItems/> : section ===3  ? <ProfileFavItems/>:<></>}
+      {section === 1 ? <ProfileChange /> : section === 2 ? <ProfileOrdered/> : section ===3  ? <ProfileFavItems/>:<></>}
     </section>
   )
 }

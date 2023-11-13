@@ -22,3 +22,47 @@
         padding: 20px 0 ;
     }
 }
+.profile-ordered{
+    border-radius: 10px;
+    border: 2px solid $gray;
+    width: 100%;
+    margin-right: 5%;
+    .profile-ordered-head{
+        padding: 2%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        p{
+            font-size: 20px;
+            color: $dark-gray;
+            font-weight: 500;
+        }
+        p:first-child{
+            flex-basis: 25%;
+        }
+        p:nth-child(2){
+            flex-basis: 25%;
+        }
+        p:nth-child(3){
+            flex-basis: 30%;
+        }
+    }
+    .profile-ordered-items{
+        .profile-page-ordered-item:last-child{
+            margin-bottom: 0;
+            border-bottom: none;
+        }
+        .profile-page-ordered-item:first-child{
+            border-top: 2px solid $gray;
+        }
+    }
+}
+
+
+.profile-fav{
+    display: flex;
+    align-items: center;
+    padding-right: 5%;
+    gap: 20px;
+    flex-wrap: wrap;
+}
