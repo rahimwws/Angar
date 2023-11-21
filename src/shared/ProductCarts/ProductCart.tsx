@@ -12,7 +12,8 @@ type Props = {
     name: string,
     category: string,
     quantity: number,
-    price: number
+    price: number,
+    image:any
 }
 
 export const ProductCart = (props: Props) => {
@@ -23,7 +24,7 @@ export const ProductCart = (props: Props) => {
                     <div className="sale">10% off</div>
                     <Heart />
                 </div>
-                <Image src={image} alt='product' width={200} height={200} />
+                <Image src={props.image} alt='product' width={200} height={200} />
                 <div className="quantity">
                     <p>Количество: <span>{props.quantity}</span></p>
                 </div>
