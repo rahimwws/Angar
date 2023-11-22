@@ -33,3 +33,17 @@
         }
     }
 }
+
+@media screen and (width<=450px) {
+    .recommended-section{
+        padding-left: 2%;
+        .recommended-text{
+            h1{
+                font-size: 18px;
+            }
+            p{
+                font-size: 15px;
+            }
+        }
+    }
+}

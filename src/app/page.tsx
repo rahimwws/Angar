@@ -11,7 +11,6 @@ type Props = {};
 
 const  Home =async (props: Props) => {
   const data = await getData()
-  console.log(data);
   
   
   return (

@@ -10,7 +10,7 @@ import Link from 'next/link'
 
 type Props = {
     name: string,
-    category: string,
+    category: any,
     quantity: number,
     price: number,
     image:any

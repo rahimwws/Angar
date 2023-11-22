@@ -1,8 +1,7 @@
-"use client"
+"use client";
 
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-
 
 import "./Header.scss";
 
@@ -20,42 +19,72 @@ import Link from "next/link";
 type Props = {};
 
 const Header = (props: Props) => {
-  const [isOpenedMain, setIsOpenedsMain] = useState(false)
-  const [isAuthModal, setIsAuthModal] = useState(false)
+  const [isOpenedMain, setIsOpenedsMain] = useState(false);
+  const [isAuthModal, setIsAuthModal] = useState(false);
 
   useEffect(() => {
-
     const main: any | HTMLElement = document.querySelector("main");
     if (isOpenedMain) {
-      main.className = "blur" as string
-    }else{
-      main.classList.remove("blur")
+      main.className = "blur" as string;
+    } else {
+      main.classList.remove("blur");
     }
-    main.addEventListener("click",()=>{
-      setIsOpenedsMain(false)
-    })  
-  }, [isOpenedMain])
+    main.addEventListener("click", () => {
+      setIsOpenedsMain(false);
+    });
+  }, [isOpenedMain]);
 
   return (
     <>
-      <header>
+      <header className="desktop-header">
         <HeaderInfo />
         <div className="main-header">
           <Link href="/">
-          <Image src={logo} alt="logo" width={110} height={110} />
+            <Image src={logo} alt="logo" width={110} height={110} />
           </Link>
-          <Nav openCatalog={setIsOpenedsMain} check = {isOpenedMain} />
+          <Nav openCatalog={setIsOpenedsMain} check={isOpenedMain} />
           <SearchInput />
           <div className="assets">
-            <Image src={user} alt="user" onClick={()=> isAuthModal ? setIsAuthModal(false): setIsAuthModal(true)} />
+            <Image
+              src={user}
+              alt="user"
+              onClick={() =>
+                isAuthModal ? setIsAuthModal(false) : setIsAuthModal(true)
+              }
+            />
             <Link href="/cart">
-            <Image src={shop} alt="shop" />
+              <Image src={shop} alt="shop" />
             </Link>
-          </div> 
+          </div>
+        </div>
+      </header>
+      <header className="mobile-header">
+        <HeaderInfo />
+        <div className="main-header">
+          <Link href="/">
+            <Image src={logo} alt="logo" width={110} height={110} />
+          </Link>
+          <div className="assets">
+            <Image
+              src={user}
+              alt="user"
+              onClick={() =>
+                isAuthModal ? setIsAuthModal(false) : setIsAuthModal(true)
+              }
+            />
+            <Link href="/cart">
+              <Image src={shop} alt="shop" />
+            </Link>
+          </div>
+        </div>
+        <div className="mobile-catalog-header">
+        <Nav openCatalog={setIsOpenedsMain} check={isOpenedMain} />
+        <SearchInput />
+
         </div>
       </header>
       <MegaMenu isOpen={isOpenedMain} close={setIsOpenedsMain} />
-      <AuthModal check={isAuthModal} open = {setIsAuthModal} />
+      <AuthModal check={isAuthModal} open={setIsAuthModal} />
     </>
   );
 };

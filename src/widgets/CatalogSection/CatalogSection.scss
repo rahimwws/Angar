@@ -1,7 +1,8 @@
 @import "../../styles/color.module.scss";
 
 .catalog-section {
-padding: 0 5%;
+    padding: 0 5%;
+
     .CatalogSlider {
 
         margin-top: 5%;
@@ -15,7 +16,9 @@ padding: 0 5%;
             justify-content: space-between;
             gap: 5%;
         }
-
+        .mobile-catalog-section{
+            display: none;
+        }
         .CatalogSectionItem {
             flex: 0 0 100%;
             min-width: 0;
@@ -49,5 +52,21 @@ padding: 0 5%;
                 font-weight: 700;
             }
         }
+    }
+}
+
+@media screen and (width<=450px) {
+    .catalog-section {
+        padding: 0 2%;
+
+        .CatalogSlider {
+            .CatalogSectionItem {
+                display: none;
+            }
+            .mobile-catalog-section {
+                display: flex;
+            }
+        }
+
     }
 }

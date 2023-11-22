@@ -23,9 +23,10 @@
     }
 
     .action {
-        span{
+        span {
             cursor: pointer;
         }
+
         gap: 40px;
     }
 
@@ -34,4 +35,22 @@
         align-items: center;
     }
 
+}
+
+@media screen and (width<550px) {
+    .header-info {
+        justify-content: end;
+        padding: 0 2%;
+
+        p,
+        a {
+            font-size: 12px;
+        }
+
+        .no-action {
+            display: none;
+        }
+
+        .action {}
+    }
 }

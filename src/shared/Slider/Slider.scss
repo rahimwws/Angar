@@ -46,3 +46,21 @@
         }
     }
 }
+
+@media screen and (width<=450px) {
+    .slider-section{
+    padding: 0 2%;
+
+        .slider{
+            .emblaSlide{
+                border-radius: 17px;
+                height: 120px;
+            }
+            .assets{
+                button{
+                    font-size: 28px;
+                }
+            }
+        }
+    }
+}

@@ -5,6 +5,7 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import "./style.scss";
 import useEmblaCarousel from "embla-carousel-react";
 import { ProductCart } from "@/shared/ProductCarts/ProductCart";
+import { ProductSortApi } from "@/features/ProductSortApi/ProductSortApi";
 
 type Props = {
   data: any;
@@ -31,7 +32,6 @@ export const RecommendedSectiion = (props: Props) => {
       setIncluded(props.data ? props.data.included : [])
     
     }, []);
-    console.log(included)
 
   return (
     <section className="recommended-section">
@@ -59,23 +59,16 @@ export const RecommendedSectiion = (props: Props) => {
       <div className="recommended-viewport" ref={emblaRef}>
         <div className="recommended-container">
           {data.map((item: any, key: number) => {
-            let idPicture = 0
-            let idNumber = item?.relationships["media"].data[0]["id"]
-            included.map((img:any)=>{
-              if(img.id === idNumber){
-                idPicture = img.attributes["media.url"]
-              }
-            })
-            console.log(idPicture);
+            const includedItems = ProductSortApi(item,included)
             
             return (
               <ProductCart
                 name={item?.attributes["product.label"]}
-                category={idNumber}
+                category={includedItems[2]}
                 quantity={54}
-                price={22200}
+                price={includedItems[1]}
                 key={key}
-                image={`https://angar.ussat.tm/aimeos/${idPicture}`}
+                image={`https://angar.ussat.tm/aimeos/${includedItems[0]}`}
               />
             );
           })}

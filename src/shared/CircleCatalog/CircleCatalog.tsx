@@ -15,7 +15,8 @@ export const CircleCatalog = (props: Props) => {
       <div className="image">
         <Image src={props.image} alt='catalog' />
       </div>
-      {props.name}
+      
+      <p>{props.name}</p>
     </div>
   )
 }
