@@ -6,8 +6,8 @@ import Image from "next/image";
 import "./Header.scss";
 
 import logo from "../../../public/logo.svg";
-import shop from "./assets/icons/shop.png";
-import user from "./assets/icons/user.png";
+import shop from "./assets/icons/shop.svg";
+import user from "./assets/icons/user.svg";
 
 import Nav from "@/shared/Nav/Nav";
 import SearchInput from "@/entities/SearchInput/SearchInput";
@@ -73,14 +73,29 @@ const Header = (props: Props) => {
               }
             />
             <Link href="/cart">
-              <Image src={shop} alt="shop" />
+              <Image src={shop} alt="shop" width={25} height={25} />
             </Link>
           </div>
         </div>
         <div className="mobile-catalog-header">
-        <Nav openCatalog={setIsOpenedsMain} check={isOpenedMain} />
-        <SearchInput />
-
+          <button>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="9"
+              viewBox="0 0 20 9"
+              fill="none"
+            >
+              <path
+                d="M1.00073 1.5H19.0007M1.00073 7.5H19.0007"
+                stroke="white"
+                strokeWidth="1.3"
+                strokeLinecap="round"
+              />
+            </svg>
+            <Nav openCatalog={setIsOpenedsMain} check={isOpenedMain} />
+          </button>
+          <SearchInput />
         </div>
       </header>
       <MegaMenu isOpen={isOpenedMain} close={setIsOpenedsMain} />

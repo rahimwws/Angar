@@ -6,7 +6,8 @@ import { Arrow } from './assets/Arrow'
 
 type Props = {
     isOpen: any,
-    class:string
+    class:string,
+    open:any
 }
 
 export const MainMenu = (props: Props) => {
@@ -22,7 +23,7 @@ export const MainMenu = (props: Props) => {
         props.isOpen(true)
     }
     return (
-        <div className={props.class}>
+        <div className={props.open ? "none" : props.class}>
             <ul>
                 {items.map((item: string,index:number) => {
                     return (

@@ -20,3 +20,12 @@
     font-size: 16px;
     color: $dark-blue;
 }
+
+
+@media screen and (width<=450px) {
+    .page-input{
+        padding: 10px  0 10px 5px;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+}

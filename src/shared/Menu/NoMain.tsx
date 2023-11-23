@@ -6,7 +6,8 @@ import { Arrow } from './assets/Arrow'
 
 type Props = {
     isOpen: any,
-    class:string
+    class:string,
+    open:any,
 }
 
 export const NoMain = (props: Props) => {
@@ -18,7 +19,7 @@ export const NoMain = (props: Props) => {
     }
     
     return (
-        <div className={props.class}>
+    <div className={props.open ? "none" : `${props.class} extra-menu`}>
             <ul>
                 {items.map((item: string,index:number) => {
                     return (

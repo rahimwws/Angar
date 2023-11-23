@@ -53,6 +53,14 @@
             }
         }
         .mobile-catalog-header{
+            button{
+                display: flex;
+                align-items: center;
+                background-color: $red;
+                padding: 10px 5px;
+                border-radius: 5px;
+                gap: 7px;
+            }
             margin-top: -5%;
             margin-bottom: 5%;
             display: flex;

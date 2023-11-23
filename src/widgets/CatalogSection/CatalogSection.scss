@@ -60,11 +60,15 @@
         padding: 0 2%;
 
         .CatalogSlider {
+            .CatalogContainer{
+                gap: 20px;
+            }
             .CatalogSectionItem {
                 display: none;
             }
             .mobile-catalog-section {
                 display: flex;
+                gap: 20px;
             }
         }
 

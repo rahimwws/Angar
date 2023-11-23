@@ -1,15 +1,55 @@
+.mega-menu-mobile{
+    display: none;
+}
+
 .mega-menu {
     width: 100%;
     background-color: white;
-    z-index: 99;
+    z-index: 5;
     top: 5%;
     left: 0;
     position: absolute;
     padding: 20px 0;
 
-    .menu-catalog{
+    .menu-catalog {
         margin-left: 5%;
         gap: 5%;
         display: flex;
+    }
+}
+
+
+
+@media screen and (width<=450px) {
+    .mega-menu {
+        display: none;
+    }
+    .mega-menu-mobile{
+        height: 100vh;
+        z-index: 10;
+        display: block;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 0;
+        background-color: white;
+        padding: 20px 0;
+        .mobile-catalog-header{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            p{
+                cursor: pointer;
+                padding-left: 10px;
+                font-size: 18px;
+                font-weight: 600;
+            }
+            button{
+                cursor: pointer;
+                background-color: inherit;
+                width: 40px;
+                height: 40px;
+            }
+        }
     }
 }
