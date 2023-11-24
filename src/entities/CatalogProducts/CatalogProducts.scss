@@ -5,4 +5,12 @@
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 10px;
+    
+}
+
+@media screen and (width<450px){
+    .catalog-products{
+        gap: 10px;
+        justify-content: start;
+    }
 }

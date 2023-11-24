@@ -108,3 +108,9 @@
     }
 
 }
+
+@media screen and (width<=450px) {
+    .catalog-filter{
+        display: none;
+    }
+}

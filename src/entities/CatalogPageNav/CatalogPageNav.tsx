@@ -14,7 +14,6 @@ export const CatalogPageNav = (props: Props) => {
                 <CatalogBlock />
                 <CatalogBlock />
                 <CatalogBlock />
-                <CatalogBlock />
             </div>
             <div className="catalog-sort">
                 <p>Сортировать по <CatalogArrow/></p>

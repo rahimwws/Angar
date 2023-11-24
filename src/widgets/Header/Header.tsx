@@ -6,7 +6,7 @@ import Image from "next/image";
 import "./Header.scss";
 
 import logo from "../../../public/logo.svg";
-import shop from "./assets/icons/shop.svg";
+import shop from "./assets/icons/shopping-cart.svg";
 import user from "./assets/icons/user.svg";
 
 import Nav from "@/shared/Nav/Nav";
@@ -53,7 +53,7 @@ const Header = (props: Props) => {
               }
             />
             <Link href="/cart">
-              <Image src={shop} alt="shop" />
+              <Image src={shop} alt="shop" width={25} height={25} />
             </Link>
           </div>
         </div>
@@ -71,9 +71,10 @@ const Header = (props: Props) => {
               onClick={() =>
                 isAuthModal ? setIsAuthModal(false) : setIsAuthModal(true)
               }
+              width={25} height={25}
             />
             <Link href="/cart">
-              <Image src={shop} alt="shop" width={25} height={25} />
+              <Image src={shop} alt="shop" width={20} height={22} />
             </Link>
           </div>
         </div>

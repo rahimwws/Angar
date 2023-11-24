@@ -67,8 +67,17 @@
         padding-top: 50px;
         padding-bottom: 10px;
         .button{
-            padding: 10px;
-            border-radius: 0;
+            padding: 15px;
+            border-radius: 5px;
+            width: 90%;
+        }
+        .page-input{
+            width: 90%;
+            align-self: center;
+        }
+        label{
+            font-size: 14px;
+            margin-left: 5%;
         }
     }
     
