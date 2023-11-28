@@ -44,3 +44,32 @@
         margin: 1%  5%  0 5%;
     }
 }
+
+
+
+@media screen and (width<=450px) {
+    .about-product{
+        margin-top: 10%;
+        .info{
+            .product-info{
+                margin: 0 2%;
+                h2{
+                    display: none;
+                }
+            }
+            flex-direction: column;
+        }
+        h3{
+            margin: 5% 2%;
+        }
+        .main-text{
+            margin: 0 2%;
+        }
+        .product-charachter{
+            p{}
+        }
+        p{
+            margin: 1% 2%;
+        }
+    }
+}

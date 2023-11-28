@@ -6,13 +6,40 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    .images{
+
+    .images {
         display: flex;
         align-items: center;
-        .blocks{
+
+        .blocks {
             display: flex;
             flex-direction: column;
             gap: 10px;
+        }
+    }
+}
+
+
+@media screen and (width<=450px) {
+    .product-page-main {
+        padding: 0 2%;
+        flex-direction: column;
+        justify-content: center;
+        .images {
+            
+            align-items: center;
+            flex-direction: column-reverse;
+            justify-content: center;
+
+            .blocks {
+                justify-content: center;
+                align-items: center;
+                flex-direction: row;
+            }
+        }
+
+        .product-info {
+            display: none;
         }
     }
 }

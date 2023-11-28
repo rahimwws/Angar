@@ -14,3 +14,12 @@
         gap: 10px;
     }
 }
+
+@media screen and (width<=450px) {
+    .same-products{
+        margin: 0 2%;
+        h1{
+            font-size: 20px;
+        }
+    }
+}

@@ -1,7 +1,17 @@
-.basket-items{
+.basket-items {
     margin-bottom: 3%;
     padding: 0 5%;
     display: flex;
     justify-content: space-between;
     align-items: self-start;
+}
+
+
+@media screen and (width<450px) {
+    .basket-items {
+        padding: 0 2%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }

@@ -34,3 +34,11 @@
     }
 
 }
+
+@media screen and (width<=450px) {
+    .basket-table{
+        .table-header{
+            display: none;
+        }
+    }
+}

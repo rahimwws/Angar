@@ -17,7 +17,7 @@ export const AboutProduct = (props: Props) => {
       </div>
       <hr />
       <h3>Ниппель оцинкованный DN 15 (1/2)</h3>
-      <div className={Info === 0 ? "" : "none"}>
+      <div className={Info === 0 ? "product-charachter" : "none"}>
         <div className="info">
           <ProductInfo />
           <ProductInfo />
@@ -28,7 +28,7 @@ export const AboutProduct = (props: Props) => {
           производства. Указанная информация не является публичной офертой.
         </p>
       </div>
-      <div className={Info === 0 ? "none" : ""}>
+      <div className={Info === 0 ? "none" : "product-discription"}>
         <p>
           Дрель-шуруповерт аккумуляторная MAKITA DF 347DWE14 В 1,5 А/ч — в нашем
           интернет-магазине можно приобрести с дополнительной выгодой: оплата
