@@ -3,14 +3,12 @@ import React from "react";
 
 import { Slider } from "@/shared/Slider/Slider";
 import { CatalogSection } from "@/widgets/CatalogSection/CatalogSection";
-import { RecommendedSectiion } from "@/widgets/RecommendedSection/RecommendedSectiion";
-import { getData } from "@/features/Api/RecommendedSection/getData";
+import { RecommendedSection } from "@/widgets/RecommendedSection/RecommendedSection";
 
 
 type Props = {};
 
 const  Home =async (props: Props) => {
-  const data = await getData()
   
   
   return (
@@ -18,10 +16,10 @@ const  Home =async (props: Props) => {
       <main className="">
         <Slider />
         <CatalogSection />
-        <RecommendedSectiion data={data} />
+        <RecommendedSection  />
         <Slider />
-        <RecommendedSectiion data={data} />
-        <RecommendedSectiion data={data} />
+        <RecommendedSection  />
+        <RecommendedSection  />
       </main>
     </>
   );

@@ -1,8 +1,8 @@
 import { Footer } from "@/widgets/Footer/Footer";
 import Header from "@/widgets/Header/Header";
-
 import "@/styles/global.scss";
-export default function RootLayout({
+import { QueryProvider } from "./QueryProvider";
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -10,9 +10,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <QueryProvider>
           <Header />
           {children}
           <Footer />
+        </QueryProvider>
       </body>
     </html>
   );

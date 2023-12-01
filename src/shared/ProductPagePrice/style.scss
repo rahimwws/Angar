@@ -108,7 +108,15 @@
 @media screen and (width<=450px) {
     .product-page-about{
         .product-page-price{
+            p{
+                font-size: 11px;
+            }
             // price responsive
+            button{
+                height: 30px;
+                width: 30%;
+                font-size: 16px;
+            }
         }
     }
 }

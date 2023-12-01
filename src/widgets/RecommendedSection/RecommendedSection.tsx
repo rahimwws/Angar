@@ -6,14 +6,24 @@ import "./style.scss";
 import useEmblaCarousel from "embla-carousel-react";
 import { ProductCart } from "@/shared/ProductCarts/ProductCart";
 import { ProductSortApi } from "@/features/ProductSortApi/ProductSortApi";
+import axios from "axios";
+import { useQuery } from "react-query";
 
-type Props = {
-  data: any;
-};
+type Props = {};
 
-export const RecommendedSectiion = (props: Props) => {
-  const [data,setData] = useState([])
-  const [included,setIncluded] = useState([])
+export const RecommendedSection = (props: Props) => {
+  const {} = useQuery({
+    queryKey: ["HomeProducts"],
+    queryFn: async () => {
+      const { data } = await axios.get(
+        "https://angar.ussat.tm/jsonapi/product?locale=ru&include=text,media,attribute"
+      );
+      // return data
+      console.log(data);
+    },
+  });
+  const [data, setData] = useState([]);
+  const [included, setIncluded] = useState([]);
   const [emblaRef, emblaApi] = useEmblaCarousel();
   const scrollPrev = useCallback(() => {
     if (emblaApi) {
@@ -27,11 +37,9 @@ export const RecommendedSectiion = (props: Props) => {
     }
   }, [emblaApi]);
   useEffect(() => {
-
-      setData(props.data ? props.data.data : [])
-      setIncluded(props.data ? props.data.included : [])
-    
-    }, []);
+    setData([] ? [] : []);
+    setIncluded([] ? [] : []);
+  }, []);
 
   return (
     <section className="recommended-section">
@@ -59,8 +67,8 @@ export const RecommendedSectiion = (props: Props) => {
       <div className="recommended-viewport" ref={emblaRef}>
         <div className="recommended-container">
           {data.map((item: any, key: number) => {
-            const includedItems = ProductSortApi(item,included)
-            
+            const includedItems = ProductSortApi(item, included);
+
             return (
               <ProductCart
                 name={item?.attributes["product.label"]}

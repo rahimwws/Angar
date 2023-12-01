@@ -51,8 +51,10 @@
     .about-product{
         margin-top: 10%;
         .info{
+            align-items: self-start;
+            gap: 0;
+            margin: 0;
             .product-info{
-                margin: 0 2%;
                 h2{
                     display: none;
                 }

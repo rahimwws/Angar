@@ -16,12 +16,13 @@ import { MegaMenu } from "@/entities/MegaMenu/MegaMenu";
 import { AuthModal } from "@/entities/AuthModal/AuthModal";
 import Link from "next/link";
 
-type Props = {};
+type Props = {
+};
 
 const Header = (props: Props) => {
   const [isOpenedMain, setIsOpenedsMain] = useState(false);
   const [isAuthModal, setIsAuthModal] = useState(false);
-
+  
   useEffect(() => {
     const main: any | HTMLElement = document.querySelector("main");
     if (isOpenedMain) {
