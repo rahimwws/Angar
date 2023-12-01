@@ -37,6 +37,8 @@
 
 @media screen and (width<=450px) {
     .basket-table{
+        width: 100%;
+        padding: 0;
         margin-top: 5%;
         .table-header{
             display: none;
