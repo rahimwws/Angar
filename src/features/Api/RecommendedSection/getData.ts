@@ -11,7 +11,7 @@
 //     console.log(data)
 
 //   }
-// })
+//   })
 // export async function getData() {
 //     const res = await fetch('https://angar.ussat.tm/jsonapi/product?locale=ru&include=text,media,attribute')
 //     // The return value is *not* serialized

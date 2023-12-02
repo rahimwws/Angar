@@ -66,3 +66,10 @@
     gap: 20px;
     flex-wrap: wrap;
 }
+
+
+@media screen and (width<=450px) {
+    .profile-change{
+        flex-basis: 100%;
+    }
+}
