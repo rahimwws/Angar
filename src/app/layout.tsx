@@ -1,7 +1,7 @@
 import { Footer } from "@/widgets/Footer/Footer";
 import Header from "@/widgets/Header/Header";
 import "@/styles/global.scss";
-import { QueryProvider } from "./QueryProvider";
+// import { QueryProvider } from "./QueryProvider";
 export default async function RootLayout({
   children,
 }: {
@@ -10,11 +10,11 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body>
-        <QueryProvider>
+        {/* <QueryProvider> */}
           <Header />
           {children}
           <Footer />
-        </QueryProvider>
+        {/* </QueryProvider> */}
       </body>
     </html>
   );

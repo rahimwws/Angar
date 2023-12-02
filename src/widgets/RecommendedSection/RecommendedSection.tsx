@@ -6,22 +6,22 @@ import "./style.scss";
 import useEmblaCarousel from "embla-carousel-react";
 import { ProductCart } from "@/shared/ProductCarts/ProductCart";
 import { ProductSortApi } from "@/features/ProductSortApi/ProductSortApi";
-import axios from "axios";
-import { useQuery } from "react-query";
+// import axios from "axios";
+// import { useQuery } from "react-query";
 
 type Props = {};
 
 export const RecommendedSection = (props: Props) => {
-  const {} = useQuery({
-    queryKey: ["HomeProducts"],
-    queryFn: async () => {
-      const { data } = await axios.get(
-        "https://angar.ussat.tm/jsonapi/product?locale=ru&include=text,media,attribute"
-      );
-      // return data
-      console.log(data);
-    },
-  });
+  // const {} = useQuery({
+  //   queryKey: ["HomeProducts"],
+  //   queryFn: async () => {
+  //     const { data } = await axios.get(
+  //       "https://angar.ussat.tm/jsonapi/product?locale=ru&include=text,media,attribute"
+  //     );
+  //     // return data
+  //     console.log(data);
+  //   },
+  // });
   const [data, setData] = useState([]);
   const [included, setIncluded] = useState([]);
   const [emblaRef, emblaApi] = useEmblaCarousel();

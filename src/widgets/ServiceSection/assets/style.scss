@@ -4,4 +4,11 @@
     align-items: center;
     flex-wrap: wrap;
     justify-content: space-between;
+    gap: 15px;
+}
+
+@media screen and (width<450px) {
+    .service-section{
+        margin-top: 5%;
+    }
 }

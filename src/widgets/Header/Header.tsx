@@ -80,7 +80,7 @@ const Header = (props: Props) => {
           </div>
         </div>
         <div className="mobile-catalog-header">
-          <button>
+          <button onClick={()=>setIsOpenedsMain(true)}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
