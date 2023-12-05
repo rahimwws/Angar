@@ -6,8 +6,8 @@ import React, { useState } from "react";
 
 import "./MegaMenu.scss";
 import { NoMain } from "@/shared/Menu/NoMain";
-import { getCatalog } from "@/features/Api/MenuCatalog/getCatalog";
-import { catalogItems } from "@/features/Api/MenuCatalog/catalogItems";
+import { useCatalog } from "@/features/Api/MenuCatalog/useCatalog";
+import { useCatalogItems } from "@/features/Api/MenuCatalog/useCatalogItems";
 type Props = {
   isOpen: any;
   close: any;

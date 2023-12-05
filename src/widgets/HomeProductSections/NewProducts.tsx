@@ -8,15 +8,14 @@ import { ProductCart } from "@/shared/ProductCarts/ProductCart";
 import { ProductSortApi } from "@/features/ProductSortApi/ProductSortApi";
 import {
   useDataNew,
-  useDataRecommended,
-  useDataSale,
 } from "@/features/Api/getProducts/getData";
 
 type Props = {
 };
 
-export const RecommendedSection = (props: Props) => {
-  let { data } = useDataRecommended();
+export const NewProducts = (props: Props) => {
+  let { data } = useDataNew();
+
   const [emblaRef, emblaApi] = useEmblaCarousel();
   const scrollPrev = useCallback(() => {
     if (emblaApi) {
@@ -33,9 +32,7 @@ export const RecommendedSection = (props: Props) => {
   return (
     <section className="recommended-section">
       <div className="recommended-text">
-        <h1>
-            Рекомендуемые товары
-        </h1>
+        <h1>Новые товары</h1>
         <p>
           Все{" "}
           <svg

@@ -7,8 +7,8 @@ export const useDataRecommended = () => {
         () => apiServices.getRecommended(), {
         select: ({ data }) => data
     }
-    );
-} 
+    )
+}
 
 
 export const useDataNew = () => {
@@ -18,7 +18,7 @@ export const useDataNew = () => {
         select: ({ data }) => data
     }
     );
-}  
+}
 
 export const useDataSale = () => {
     return useQuery(

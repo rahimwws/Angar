@@ -2,7 +2,7 @@ import { CircleCatalog } from "@/shared/CircleCatalog/CircleCatalog";
 import React from "react";
 
 import image from "./assets/Plumbing.svg";
-import { catalogItems } from "@/features/Api/MenuCatalog/catalogItems";
+import { useCatalogItems } from "@/features/Api/MenuCatalog/useCatalogItems";
 type Props = {
   number:number
 };

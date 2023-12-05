@@ -16,6 +16,7 @@ export const SameProducts = (props: Props) => {
           quantity={54}
           price={22200}
           image={""}
+          sale = {0}
         />
            <ProductCart
           name='Ниппель оцинкованный DN 15 (1/2")'
@@ -23,12 +24,14 @@ export const SameProducts = (props: Props) => {
           quantity={54}
           price={22200}
           image={""}
+          sale = {0}
         />   <ProductCart
         name='Ниппель оцинкованный DN 15 (1/2")'
         category="Сантехника"
         quantity={54}
         price={22200}
         image={""}
+        sale = {0}
       />
       </div>
     </section>

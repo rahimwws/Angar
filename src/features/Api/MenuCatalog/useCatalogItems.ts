@@ -1,6 +1,6 @@
-import { useCatalog } from "./getCatalog";
+import { useCatalog } from "./useCatalog";
 
-export const catalogItems = () => {
+export const useCatalogItems = () => {
     const { data } = useCatalog()
 
     let HomeCatalogId = []
