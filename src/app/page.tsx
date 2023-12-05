@@ -3,7 +3,7 @@ import React from "react";
 
 import { Slider } from "@/shared/Slider/Slider";
 import { CatalogSection } from "@/widgets/CatalogSection/CatalogSection";
-import { RecommendedSection } from "@/widgets/RecommendedSection/RecommendedSection";
+import { RecommendedSection } from "@/widgets/HomeProductSections/RecommendedSection";
 
 
 type Props = {};
@@ -15,11 +15,12 @@ const  Home =async (props: Props) => {
     <>
       <main className="">
         <Slider />
+      
         <CatalogSection />
-        <RecommendedSection  />
+        <RecommendedSection recommended = {true} new = {false}/>
         <Slider />
-        <RecommendedSection  />
-        <RecommendedSection  />
+        <RecommendedSection recommended = {false} new = {true} />
+        <RecommendedSection recommended = {false} new = {false} />
       </main>
     </>
   );

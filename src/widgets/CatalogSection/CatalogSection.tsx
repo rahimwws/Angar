@@ -33,8 +33,8 @@ export const CatalogSection = (props: Props) => {
             <div className='CatalogSlider'>
                 <div className="CatalogViewport" ref={emblaRef}>
                     <div className="CatalogContainer">
-                        <Catalog />
-                        <Catalog />
+                        <Catalog number={5}/>
+                        <Catalog number={10} />
                     </div>
                 </div>
                 <div className="assets">

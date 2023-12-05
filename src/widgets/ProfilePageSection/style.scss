@@ -1,4 +1,12 @@
-
-.profile-page-section{
+.profile-page-section {
     display: flex;
+    flex-wrap: wrap;
+}
+
+@media screen and (width<450px) {
+    .profile-page-section {
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+    }
 }

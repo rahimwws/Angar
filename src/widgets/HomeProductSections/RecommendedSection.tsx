@@ -6,24 +6,24 @@ import "./style.scss";
 import useEmblaCarousel from "embla-carousel-react";
 import { ProductCart } from "@/shared/ProductCarts/ProductCart";
 import { ProductSortApi } from "@/features/ProductSortApi/ProductSortApi";
-import axios from "axios";
-import { useQuery } from "react-query";
+import {
+  getDataNew,
+  getDataRecommended,
+  getDataSale,
+} from "@/features/Api/getProducts/getData";
 
-type Props = {};
+type Props = {
+  recommended: boolean;
+  new: boolean;
+};
 
 export const RecommendedSection = (props: Props) => {
-  const {} = useQuery({
-    queryKey: ["HomeProducts"],
-    queryFn: async () => {
-      const { data } = await axios.get(
-        "https://angar.ussat.tm/jsonapi/product?locale=ru&include=text,media,attribute"
-      );
-      // return data
-      console.log(data);
-    },
-  });
-  const [data, setData] = useState([]);
-  const [included, setIncluded] = useState([]);
+  const { data } = props.recommended
+    ? getDataRecommended()
+    : props.new
+    ? getDataNew()
+    : getDataSale();
+
   const [emblaRef, emblaApi] = useEmblaCarousel();
   const scrollPrev = useCallback(() => {
     if (emblaApi) {
@@ -36,15 +36,14 @@ export const RecommendedSection = (props: Props) => {
       emblaApi.scrollNext();
     }
   }, [emblaApi]);
-  useEffect(() => {
-    setData([] ? [] : []);
-    setIncluded([] ? [] : []);
-  }, []);
 
   return (
     <section className="recommended-section">
       <div className="recommended-text">
-        <h1>Рекомендуемые товары</h1>
+        <h1>
+          {props.recommended ? "Рекомендуемые товары" : props.new ? "Новые товары" : "Товары по акции"}
+          
+        </h1>
         <p>
           Все{" "}
           <svg
@@ -66,17 +65,18 @@ export const RecommendedSection = (props: Props) => {
       </div>
       <div className="recommended-viewport" ref={emblaRef}>
         <div className="recommended-container">
-          {data.map((item: any, key: number) => {
-            const includedItems = ProductSortApi(item, included);
+          {data?.data.map((item: any, key: number) => {
+            const includedItems = ProductSortApi(item, data?.included);
 
             return (
               <ProductCart
                 name={item?.attributes["product.label"]}
-                category={includedItems[2]}
-                quantity={54}
+                category={includedItems[3]}
+                quantity={includedItems[2]}
                 price={includedItems[1]}
                 key={key}
                 image={`https://angar.ussat.tm/aimeos/${includedItems[0]}`}
+                sale={includedItems[4]}
               />
             );
           })}

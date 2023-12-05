@@ -2,22 +2,19 @@ import { CircleCatalog } from "@/shared/CircleCatalog/CircleCatalog";
 import React from "react";
 
 import image from "./assets/Plumbing.svg";
-type Props = {};
+import { catalogItems } from "@/features/Api/MenuCatalog/catalogItems";
+type Props = {
+  number:number
+};
 
 export const Catalog = (props: Props) => {
+  const data = catalogItems();
   return (
     <>
       <div className="CatalogSectionItem">
-        <CircleCatalog name="Сантехника" image={image} />
-        <CircleCatalog name="Стройматериалы" image={image} />
-        <CircleCatalog name="Электрика" image={image} />
-        <CircleCatalog name="Котельная" image={image} />
-        <CircleCatalog name="Вентиляция" image={image} />
-        <CircleCatalog name="Газоснабжения" image={image} />
-        <CircleCatalog name="Отопление" image={image} />
-        <CircleCatalog name="Отопление" image={image} />
-        <CircleCatalog name="Отопление" image={image} />
-        <CircleCatalog name="Отопление" image={image} />
+        {data[0].slice(0,8).map((item,key) => {
+          return <CircleCatalog name={item} image={image} key={key} />;
+        })}
       </div>
       <div className="mobile-catalog-section">
         <CircleCatalog name="Сантехника" image={image} />

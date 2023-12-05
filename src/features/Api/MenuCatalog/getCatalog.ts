@@ -1,13 +1,11 @@
-export async function getCatalog() {
-  const res = await fetch('https://angar.ussat.tm/jsonapi/catalog?include=catalog,text,media&locale=ru')
-  // The return value is *not* serialized
-  // You can return Date, Map, Set, etc.
+import { useQuery } from "react-query";
+import apiServices from "../api.services";
 
-  if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error('Failed to fetch data')
+export const getCatalog = () => {
+  return useQuery(
+      ["Catalog"],
+      () => apiServices.getCatalog(), {
+      select: ({ data }) => data
   }
-
-  return res.json()
-}
-
+  );
+}  
