@@ -8,13 +8,13 @@ type Props = {
 };
 
 export const Catalog = (props: Props) => {
-  const data = catalogItems();
+  // const data = catalogItems();
   return (
     <>
       <div className="CatalogSectionItem">
-        {data[0].slice(0,8).map((item,key) => {
+        {/* {data[0].slice(0,8).map((item,key) => {
           return <CircleCatalog name={item} image={image} key={key} />;
-        })}
+        })} */}
       </div>
       <div className="mobile-catalog-section">
         <CircleCatalog name="Сантехника" image={image} />

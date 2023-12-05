@@ -4,7 +4,7 @@ export const catalogItems = () => {
     const { data } = useCatalog()
 
     let HomeCatalogId = []
-    let HomeCatalogText = []
+    let HomeCatalogText = []    
 
     let SecondCatalogId = []
     let SecondCatalogText = []

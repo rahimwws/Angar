@@ -4,12 +4,12 @@ import React from 'react'
 
 type Props = {}
 import "./CatalogProducts.scss"
-import { getDataNew } from '@/features/Api/getProducts/getData'
+import { useDataNew } from '@/features/Api/getProducts/getData'
 import { ProductSortApi } from '@/features/ProductSortApi/ProductSortApi'
 
 
 export const CatalogProducts = (props: Props) => {
-  const {data} = getDataNew()
+  const {data} = useDataNew()
   return (
     <section className='catalog-products'>
           {data?.data.map((item: any, key: number) => {

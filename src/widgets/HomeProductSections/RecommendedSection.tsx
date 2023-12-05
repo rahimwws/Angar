@@ -18,7 +18,7 @@ type Props = {
 };
 
 export const RecommendedSection = (props: Props) => {
-  const { data } = props.recommended
+  let { data } = props.recommended
     ? useDataRecommended()
     : props.new
     ? useDataNew()
@@ -41,8 +41,11 @@ export const RecommendedSection = (props: Props) => {
     <section className="recommended-section">
       <div className="recommended-text">
         <h1>
-          {props.recommended ? "Рекомендуемые товары" : props.new ? "Новые товары" : "Товары по акции"}
-          
+          {props.recommended
+            ? "Рекомендуемые товары"
+            : props.new
+            ? "Новые товары"
+            : "Товары по акции"}
         </h1>
         <p>
           Все{" "}
