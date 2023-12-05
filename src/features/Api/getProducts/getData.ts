@@ -1,7 +1,7 @@
 import { useQuery } from "react-query";
 import apiServices from "../api.services";
 
-export const getDataRecommended = () => {
+export const useDataRecommended = () => {
     return useQuery(
         ["HomeProducts"],
         () => apiServices.getRecommended(), {
@@ -11,7 +11,7 @@ export const getDataRecommended = () => {
 } 
 
 
-export const getDataNew = () => {
+export const useDataNew = () => {
     return useQuery(
         ["NewProducts"],
         () => apiServices.getNew(), {
@@ -20,7 +20,7 @@ export const getDataNew = () => {
     );
 }  
 
-export const getDataSale = () => {
+export const useDataSale = () => {
     return useQuery(
         ["SaleProducts"],
         () => apiServices.getSale(), {

@@ -1,7 +1,7 @@
-import { getCatalog } from "./getCatalog";
+import { useCatalog } from "./getCatalog";
 
 export const catalogItems = () => {
-    const { data } = getCatalog()
+    const { data } = useCatalog()
 
     let HomeCatalogId = []
     let HomeCatalogText = []

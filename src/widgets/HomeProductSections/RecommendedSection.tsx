@@ -7,9 +7,9 @@ import useEmblaCarousel from "embla-carousel-react";
 import { ProductCart } from "@/shared/ProductCarts/ProductCart";
 import { ProductSortApi } from "@/features/ProductSortApi/ProductSortApi";
 import {
-  getDataNew,
-  getDataRecommended,
-  getDataSale,
+  useDataNew,
+  useDataRecommended,
+  useDataSale,
 } from "@/features/Api/getProducts/getData";
 
 type Props = {
@@ -19,10 +19,10 @@ type Props = {
 
 export const RecommendedSection = (props: Props) => {
   const { data } = props.recommended
-    ? getDataRecommended()
+    ? useDataRecommended()
     : props.new
-    ? getDataNew()
-    : getDataSale();
+    ? useDataNew()
+    : useDataSale();
 
   const [emblaRef, emblaApi] = useEmblaCarousel();
   const scrollPrev = useCallback(() => {

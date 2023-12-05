@@ -1,7 +1,7 @@
 import { useQuery } from "react-query";
 import apiServices from "../api.services";
 
-export const getCatalog = () => {
+export const useCatalog = () => {
   return useQuery(
       ["Catalog"],
       () => apiServices.getCatalog(), {
