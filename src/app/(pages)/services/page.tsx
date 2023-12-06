@@ -7,7 +7,7 @@ type Props = {}
 const ServecePage = (props: Props) => {
   return (
     <main>
-        <PageHeadInfo/>
+        <PageHeadInfo text='Сервис'/>
         <ServiveSection/>
     </main>
   )

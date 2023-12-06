@@ -10,7 +10,7 @@ type Props = {}
 const CartPage = (props: Props) => {
   return (
    <main>
-    <PageHeadInfo/>
+    <PageHeadInfo text="Корзина"/>
     <BasketItems/>
     <SameProducts/>
    </main>

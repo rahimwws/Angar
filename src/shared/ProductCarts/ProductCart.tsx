@@ -14,6 +14,7 @@ type Props = {
   price: number;
   image: any;
   sale: number;
+  link:string
 };
 
 export const ProductCart = (props: Props) => {
@@ -21,7 +22,7 @@ export const ProductCart = (props: Props) => {
     return Math.trunc(Number(props.price) + Number(sale));
   };
   return (
-    <Link href="/catalog/name">
+    <Link href={`/catalog/${props.link}`}>
       <div className="product-cart">
         <div className="head">
           <div className={props.sale != 0 ? "sale" : ""}>

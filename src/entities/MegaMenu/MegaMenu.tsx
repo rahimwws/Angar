@@ -6,7 +6,6 @@ import React, { useState } from "react";
 
 import "./MegaMenu.scss";
 import { NoMain } from "@/shared/Menu/NoMain";
-import { useCatalog } from "@/features/Api/MenuCatalog/useCatalog";
 import { useCatalogItems } from "@/features/Api/MenuCatalog/useCatalogItems";
 type Props = {
   isOpen: any;
@@ -16,7 +15,8 @@ type Props = {
 export const MegaMenu = (props: Props) => {
   const [isOpenedNoMain, setIsOpenedsNoMain] = useState(false);
   const [isOpenedInfo, setIsOpenedsInfo] = useState(false);
-
+  console.log(useCatalogItems());
+  
   
   return (
     <>

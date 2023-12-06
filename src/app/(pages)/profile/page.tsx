@@ -7,7 +7,7 @@ type Props = {}
 const ProfilePage = (props: Props) => {
   return (
     <main>
-        <PageHeadInfo/>
+        <PageHeadInfo text='Профиль'/>
         <ProfilePageSection/>
     </main>
   )

@@ -66,6 +66,9 @@ export const NewProducts = (props: Props) => {
                 key={key}
                 image={`https://angar.ussat.tm/aimeos/${includedItems[0]}`}
                 sale={includedItems[4]}
+                link={includedItems[5]}
+
+
               />
             );
           })}

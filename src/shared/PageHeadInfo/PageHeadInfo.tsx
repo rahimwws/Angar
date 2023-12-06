@@ -3,12 +3,14 @@ import React from 'react'
 import "./style.scss"
 import { Arrow } from './assets/Arrow'
 
-type Props = {}
+type Props = {
+  text:string
+}
 
 export const PageHeadInfo = (props: Props) => {
   return (
     <section className='page-head-info'>
-        <h1>Стройматериалы</h1>
+        <h1>{props.text}</h1>
         <span>
             <p>Главная</p>
             <Arrow />

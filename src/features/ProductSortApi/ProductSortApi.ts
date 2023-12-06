@@ -14,6 +14,9 @@ export const ProductSortApi = (item: any, included: any) => {
 
     let sale = 0
 
+    let link = item?.attributes["product.id"]
+    
+    
     for (const id of item?.relationships["catalog"].data) {
         const idCheck = 240
         if (id.id < idCheck) {
@@ -40,5 +43,5 @@ export const ProductSortApi = (item: any, included: any) => {
             img = item.attributes["media.url"]
         }
     })
-    return [img, price, stock,catalog,sale]
+    return [img, price, stock,catalog,sale,link]
 }
