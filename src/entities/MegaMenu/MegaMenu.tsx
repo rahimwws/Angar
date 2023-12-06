@@ -15,7 +15,7 @@ type Props = {
 export const MegaMenu = (props: Props) => {
   const [isOpenedNoMain, setIsOpenedsNoMain] = useState(false);
   const [isOpenedInfo, setIsOpenedsInfo] = useState(false);
-  console.log(useCatalogItems());
+  // console.log(useCatalogItems());
   
   
   return (
