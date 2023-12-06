@@ -7,9 +7,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import { ProductCart } from "@/shared/ProductCarts/ProductCart";
 import { ProductSortApi } from "@/features/ProductSortApi/ProductSortApi";
 import {
-  useDataNew,
   useDataRecommended,
-  useDataSale,
 } from "@/features/Api/getProducts/getData";
 
 type Props = {
