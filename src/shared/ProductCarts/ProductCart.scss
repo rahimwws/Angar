@@ -59,7 +59,12 @@
 
     .info {
         p:nth-child(2) {
-            height: 30px;
+            -webkit-line-clamp:2; /* Число отображаемых строк */
+            display: -webkit-box; /* Включаем флексбоксы */
+            -webkit-box-orient: vertical; /* Вертикальная ориентация */
+            overflow: hidden; 
+            text-overflow: ellipsis;
+            height: 40px;
             font-weight: 600;
             color: $dark-blue;
         }

@@ -15,6 +15,15 @@ export const Catalog = (props: Props) => {
         {/* {data[0].slice(0,8).map((item,key) => {
           return <CircleCatalog name={item} image={image} key={key} />;
         })} */}
+        <CircleCatalog name="Сантехника" image={image} />
+        <CircleCatalog name="Сантехника" image={image} />
+        <CircleCatalog name="Сантехника" image={image} />
+        <CircleCatalog name="Сантехника" image={image} />
+        <CircleCatalog name="Сантехника" image={image} />
+        <CircleCatalog name="Сантехника" image={image} />
+        <CircleCatalog name="Сантехника" image={image} />
+        <CircleCatalog name="Сантехника" image={image} />
+
       </div>
       <div className="mobile-catalog-section">
         <CircleCatalog name="Сантехника" image={image} />
