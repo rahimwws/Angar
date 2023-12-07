@@ -10,7 +10,7 @@ import image2 from "./assets/image 2.png"
 import image3 from "./assets/image 3.png"
 import image4 from "./assets/image 4.png"
 
-export const ServiveSection = (props: Props) => {
+export const ServiceSection = (props: Props) => {
   return (
     <section className='service-section'>
 

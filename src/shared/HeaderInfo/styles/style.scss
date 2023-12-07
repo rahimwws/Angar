@@ -11,7 +11,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-
+    .header-info-navbar{
+        display: none;
+    }
     span {
         display: flex;
         align-items: center;
@@ -38,10 +40,73 @@
 }
 
 @media screen and (width<550px) {
+    .more-info{
+        position: absolute;
+        left: 0;
+        width: 85%;
+        height: 70vh;
+        z-index: 999;
+        background-color:$white;
+        padding: 3%;
+        display: flex;
+        flex-direction: column;
+        .more-info-head{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            p{
+                font-size: 22px;
+                font-weight: 600;
+            }
+            button{
+                cursor: pointer;
+                border-radius: 5px;
+                width: 30px;
+                height: 30px;
+                background-color: $red;
+            }
+        }
+        .more-info-content{
+            .more-info-items{
+                margin-top: 10%;
+                ul{
+                    list-style: none;
+                    li{
+                        margin: 10% 0 ;
+                        text-transform: uppercase;
+                        font-size: 16px;
+                        font-weight: 500;
+                        border-bottom: 1px solid $gray;
+                    }
+                }
+            }
+            .more-info-assets{
+                 display: flex;
+                 align-items: center;
+                 justify-content: space-between;
+                 a{
+                    font-size: 16px;
+                    font-weight: 500;
+                 }
+                 button{
+                    background-color: $red;
+                    color: $white;
+                    font-size: 16px;
+                    padding: 10px 20px;
+                    border-radius: 6px;
+                 }
+            }
+            
+        }
+        p:last-child{
+            margin-top: 5%;
+            align-self: center;
+        }
+    }
     .header-info {
-        justify-content: end;
-        padding: 0 0%;
-
+        padding:  2%;
+        border-bottom: 1px solid $gray;
+        justify-content: space-between;
         p,
         a {
             font-size: 12px;
@@ -50,7 +115,14 @@
         .no-action {
             display: none;
         }
-
-        .action {}
+        .header-info-navbar{
+            cursor: pointer;
+            display: block;
+        }
+        .action {
+            .number{
+                display: none;
+            }
+        }
     }
 }

@@ -37,7 +37,7 @@ export const ProductCart = (props: Props) => {
           <Heart />
         </div>
         <div className="image">
-          <Image src={props.image} alt="product" width={150} height={150}  />
+          <Image src={props.image} alt="product" width={150} height={150}    />
         </div>
         <div className="quantity">
           <p>
