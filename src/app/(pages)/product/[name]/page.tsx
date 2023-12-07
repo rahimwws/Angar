@@ -1,11 +1,9 @@
 "use client"
-
 import { useDetail } from '@/features/Api/getDetail/useDetail'
 import { DetailSort } from '@/features/DetailSort/DetailSort'
 import { PageHeadInfo } from '@/shared/PageHeadInfo/PageHeadInfo'
 import { ProductPageInfo } from '@/widgets/ProductPageInfo/ProductPageInfo'
 import { SameProducts } from '@/widgets/SameProducts/SameProducts'
-import { useParams } from 'next/navigation'
 import React from 'react'
 
 type Props = {

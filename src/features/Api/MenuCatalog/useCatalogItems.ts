@@ -3,7 +3,7 @@ import { useCatalog } from "./useCatalog";
 export const useCatalogItems = () => {
     const { data } = useCatalog()
 
-    let TotalItem: { id: string, children: Array<any> }
+    let TotalItem: {id:string | number, data: string, children: Array<any> }
     let TotalItemText = []
     let Total = []
     let FirstName = ""
@@ -25,13 +25,15 @@ export const useCatalogItems = () => {
 
                         if (Object.keys(item.relationships).includes("catalog")) {
                             TotalItem = {
-                                id: FirstName,
+                                id:catalog,
+                                data: FirstName,
                                 children: [...item.relationships['catalog'].data]
                             }
 
                         } else {
                             TotalItem = {
-                                id: FirstName,
+                                id:catalog,
+                                data: FirstName,
                                 children: []
                             }
                         }
@@ -52,14 +54,16 @@ export const useCatalogItems = () => {
 
                                 // }
                                 TotalItem = {
-                                    id: item.attributes["catalog.label"],
+                                    id:childrenID.id,
+                                    data: item.attributes["catalog.label"],
                                     children: [...item.relationships['catalog'].data]
                                 }
                                 
                             } else {
 
                                 TotalItem = {
-                                    id: item.attributes["catalog.label"],
+                                    id:childrenID.id,
+                                    data: item.attributes["catalog.label"],
                                     children: []
                                 }
                             }
@@ -69,7 +73,7 @@ export const useCatalogItems = () => {
                     }
 
                     if (text.length > 0) { // Check if there are items in the 'text' array
-                        const existingTotalItem = TotalItemText.find((t) => t.id === catalog.id);
+                        const existingTotalItem = TotalItemText.find((t) => t.id === catalog.data);
 
                         if (existingTotalItem) {
                             // Add the text to the existing TotalItem
@@ -77,7 +81,7 @@ export const useCatalogItems = () => {
                         } else {
                             // Create a new TotalItem
                             const newTotalItem = {
-                                id: catalog.id,
+                                id: catalog.data,
                                 children: [...text],
                             };
                             TotalItemText.push(newTotalItem)
@@ -109,7 +113,7 @@ export const useCatalogItems = () => {
         }
 
     }
-    return null
+    return Total
 }
 
 

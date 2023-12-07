@@ -184,12 +184,20 @@
         //     height: 200px;
         //     position: relative;
         // }
+        .image{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
         img {
-            width: auto;
-            max-width: 150px;
-            max-height:200px;
+            width: 80%;
+            height: auto;
+            max-height: 150px;
+            
+
         }
         .image{
+            min-height: 120px;
             align-self: center;
         }
         .quantity {

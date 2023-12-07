@@ -1,3 +1,5 @@
+"use client"
+
 import { BasketTable } from '@/entities/BasketTable/BasketTable'
 import { PageHeadInfo } from '@/shared/PageHeadInfo/PageHeadInfo'
 import { BasketItems } from '@/widgets/BasketItems/BasketItems'

@@ -6,10 +6,13 @@ type Props = {}
 import "./CatalogProducts.scss"
 import { useDataNew } from '@/features/Api/getProducts/getData'
 import { ProductSortApi } from '@/features/ProductSortApi/ProductSortApi'
+import { useParams } from 'next/navigation'
+import { useCatalogProduct } from '@/features/Api/getCatalogProducts/useCatalogProducts'
 
 
 export const CatalogProducts = (props: Props) => {
-  const {data} = useDataNew()
+  const params = useParams()
+  const {data} = useCatalogProduct(Number(params.catalog))
   return (
     <section className='catalog-products'>
           {data?.data.map((item: any, key: number) => {
