@@ -1,38 +1,44 @@
-import React from 'react'
+"use client";
+import React, { useState } from "react";
 
-import "./ProductInfo.scss"
+import "./ProductInfo.scss";
 
-type Props = {}
+interface Object {
+  id: any;
+  data: any;
+}
+type Props = {
+  isSlice: boolean;
+  data: Array<Object>;
+};
 
 export const ProductInfo = (props: Props) => {
+  const [Slice, setSlice] = useState(5);
+  const [IsSliced, setIsSliced] = useState(false);
+  const Slicing = () => {
+    setIsSliced(!IsSliced);
+    if (Slice <= 5) {
+      setSlice(99);
+    } else {
+      setSlice(5);
+    }
+  };
   return (
-    <div className='product-info'>
-      <div className="product-info-item">
-        <p>Тип товара</p>
-        <div className="line"></div>
-        <span>Дрель-шуруповерт</span>
-      </div>
-      <div className="product-info-item">
-        <p>Бренд</p>
-        <div className="line"></div>
-        <span>MAKITA</span>
-      </div>
-      <div className="product-info-item">
-        <p>Назначение инструмента</p>
-        <div className="line"></div>
-        <span>профессиональный</span>
-      </div>
-      <div className="product-info-item">
-        <p>Мощность (Вт)</p>
-        <div className="line"></div>
-        <span>18</span>
-      </div>
-      <div className="product-info-item">
-        <p>Назначение инструмента</p>
-        <div className="line"></div>
-        <span>профессиональный</span>
-      </div>
-      <h2>Больше характеристик</h2>
+    <div className="product-info">
+      {props.data.slice(1, Slice).map((item) => {
+        return (
+          <div className="product-info-item">
+            <p>{item.id}</p>
+            <div className="line"></div>
+            <span>{item.data}</span>
+          </div>
+        );
+      })}
+      {props.isSlice ? (
+        <h2 onClick={Slicing}>{IsSliced ? "" : "Больше характеристик"}</h2>
+      ) : (
+        <></>
+      )}
     </div>
-  )
-}
+  );
+};

@@ -9,20 +9,22 @@ import "./style.scss"
 import { useDetail } from '@/features/Api/getDetail/useDetail'
 import { useParams } from 'next/navigation'
 import { DetailSort } from '@/features/DetailSort/DetailSort'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { DetailAttribute } from '@/features/DetailSort/DetailAttribute'
 
 type Props = {
 
 }
 
 export const ProductPageMain = (props: Props) => {
-  const params = useParams()
-  let item:any = []
-  const {data} = useDetail(Number(params.name))
-  if(data){
-    item = DetailSort(data)
-  }
-  
+  const params = useParams();
+  let item: any = [];
+  let attributes: any = [];
+  const { data } = useDetail(Number(params.name));
+    if (data) {
+      item = DetailSort(data);
+      attributes = DetailAttribute(data);
+    }
   return (
     <div className='product-page-main'>
       <div className="images">
@@ -34,7 +36,7 @@ export const ProductPageMain = (props: Props) => {
         </div>
         <ProductMainImage url = {item[2] ? `https://angar.ussat.tm/aimeos/${item[2]}` : "" }/>
       </div>
-      <ProductInfo />
+      <ProductInfo data={attributes} isSlice={false} />
       <ProductPagePrice price={item[0]} sale = {item[1]}/>
     </div>
   )

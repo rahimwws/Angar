@@ -2,6 +2,7 @@
 
 .product-info{
     h2{
+        cursor: pointer;
         width: max-content;
         border-bottom: 1px dotted $gray;
         font-size: 18px;
@@ -34,16 +35,24 @@
 
 @media screen and (width<=450px) {
     .product-info{
+        padding: 0 2%;
         .product-info-item{
-            justify-content: space-between;
+            // justify-content: sp
+            .line{
+                max-width: 20%;
+            }
             p{
                 font-size: 14px;
             }
             span{
-                white-space: wrap;
-                font-size: 14px;
+                -webkit-line-clamp:2; /* Число отображаемых строк */
+                display: -webkit-box; /* Включаем флексбоксы */
+                -webkit-box-orient: vertical; /* Вертикальная ориентация */
+                overflow: hidden; 
+                text-overflow: ellipsis;
+                max-width: 250px;
             }
-            width: 300px;
+            max-width: 380px;
         }
     }
 }

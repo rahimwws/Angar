@@ -1,5 +1,9 @@
+import { DetailAttribute } from "./DetailAttribute"
+
 export const DetailSort = (data: any) => {
     const dataID = data.data
+
+    
     const included = data.included
     const priceId = dataID?.relationships["price"].data[0]["id"]
 
@@ -27,5 +31,6 @@ export const DetailSort = (data: any) => {
             description = item.attributes["text.content"]
         }
     }
+    
     return [price, sale, img, text,description]
 }

@@ -9,7 +9,7 @@ type Props = {}
 export const CatalogPageProducts = (props: Props) => {
     return (
         <section className='catalog-page-products'>
-            <CatalogFilter />
+            {/* <CatalogFilter /> */}
             <div className="catalog-page-items">
                 <CatalogProducts />
             </div>
