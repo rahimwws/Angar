@@ -13,8 +13,10 @@ type Props = {
 };
 
 export const MegaMenu = (props: Props) => {
+  const data = useCatalogItems()
   const [isOpenedNoMain, setIsOpenedsNoMain] = useState(false);
-  const [isOpenedInfo, setIsOpenedsInfo] = useState(false);  
+  const [isOpenedInfo, setIsOpenedsInfo] = useState(false); 
+  const [MenuID,setMenuID] = useState(0) 
   return (
     <>
       <div className={props.isOpen ? "mega-menu" : "none"}>
@@ -24,17 +26,22 @@ export const MegaMenu = (props: Props) => {
               class={props.isOpen ? "main-menu" : "none"}
               isOpen={setIsOpenedsNoMain}
               open={""}
+              data = {data[1]}
+              idItem={setMenuID}
             />
           </div>
           <div>
             <NoMain
               class={isOpenedNoMain ? "main-menu" : "none"}
               isOpen={setIsOpenedsInfo} open={''}
+              idItem = {MenuID}
+              close={props.close}
+              data={data[1]}
             />
           </div>
-          <div>
+          {/* <div>
             <Menu class={isOpenedInfo ? "items" : "none"} close={props.close} />
-          </div>
+          </div> */}
         </div>
       </div>
       <div className={props.isOpen ? "mega-menu-mobile" : "none"}>
@@ -99,6 +106,9 @@ export const MegaMenu = (props: Props) => {
                 class={props.isOpen ? "main-menu" : "none"}
                 isOpen={setIsOpenedsNoMain}
                 open={isOpenedNoMain}
+                data = {data[1]}
+              idItem={setMenuID}
+
               />
             </div>
             <div>
@@ -106,14 +116,18 @@ export const MegaMenu = (props: Props) => {
                 class={isOpenedNoMain ? "main-menu" : "none"}
                 isOpen={setIsOpenedsInfo}
                 open={isOpenedInfo}
+                idItem = {MenuID}
+              data={data[1]}
+              close={props.close}
+
               />
             </div>
-            <div>
+            {/* <div>
               <Menu
                 class={isOpenedInfo ? "items" : "none"}
                 close={props.close}
               />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

@@ -1,32 +1,50 @@
-"use client"
-import React, { useContext, useState } from 'react'
+"use client";
+import React, { useContext, useState } from "react";
 
-import "./assets/MainMenu.scss"
-import { Arrow } from './assets/Arrow'
+import "./assets/MainMenu.scss";
+import { Arrow } from "./assets/Arrow";
+import Link from "next/link";
 
 type Props = {
-    isOpen: any,
-    class:string,
-    open:any,
-}
+  isOpen: any;
+  class: string;
+  open: any;
+  idItem: any;
+  data: any;
+close:any
+};
 
 export const NoMain = (props: Props) => {
-    const items: any = ["Водо-газоснабжение", "Водо-газоснабжение", "Общестроительные материалы", "Всё для сауны и бани", "Инструмент", "Общестроительные материалы", "Общестроительные материалы", "Всё для сауны и бани", "Инструмент",]
-    const [red, setRed] = useState(null)
-    const HandleClick = (id:any)=>{
-        setRed(id)
-        props.isOpen(true)
-    }
-    
-    return (
+  const [red, setRed] = useState(null);
+  const HandleClick = (id: any) => {
+    setRed(id);
+    props.isOpen(true);
+    props.close(false)
+  };
+  console.log(props.idItem);
+
+  const data = props.data.filter((item: any) => item.id == props.idItem)
+
+  console.log(data);
+  
+  return (
     <div className={props.open ? "none" : `${props.class} extra-menu`}>
-            <ul>
-                {items.map((item: string,index:number) => {
-                    return (
-                        <li className={red === index ? "red" : ""} key={index} onClick={()=>HandleClick(index)}> {item}<Arrow color={red === index} /></li>
-                    )
-                })}
-            </ul>
-        </div>
-    )
-}
+      <ul>
+        {data && data[0]?.children.map((item: any, index: number) => {
+          return (
+            <li
+              className={red === index ? "red" : ""}
+              key={index}
+              onClick={() => HandleClick(index)}
+            >
+            <Link href={`/catalog/${item.id}`}>
+              {item.data}
+            </Link>
+              <Arrow color={red === index} />
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+};

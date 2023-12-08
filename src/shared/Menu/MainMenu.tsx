@@ -7,7 +7,9 @@ import { Arrow } from './assets/Arrow'
 type Props = {
     isOpen: any,
     class:string,
-    open:any
+    open:any,
+    data:Array<any>,
+    idItem:any
 }
 
 export const MainMenu = (props: Props) => {
@@ -16,18 +18,18 @@ export const MainMenu = (props: Props) => {
     // main.addEventListener("click",()=>{
     //     setIsOpenedsMain(false)
     // })
-    const items: any = ["Водо-газоснабжение", "Водо-газоснабжение", "Общестроительные материалы", "Всё для сауны и бани", "Инструмент", "Общестроительные материалы", "Общестроительные материалы", "Всё для сауны и бани", "Инструмент",]
     const [red, setRed] = useState(null)
-    const HandleClick = (id:any)=>{
+    const HandleClick = (id:any,itemID:number | string )=>{
         setRed(id)
         props.isOpen(true)
+        props.idItem(itemID)
     }
     return (
         <div className={props.open ? "none" : props.class}>
             <ul>
-                {items.map((item: string,index:number) => {
+                {props.data.map((item: any,index:number) => {
                     return (
-                        <li className={red === index ? "red" : ""} key={index} onClick={()=>HandleClick(index)}> {item}<Arrow color={red === index} /></li>
+                        <li className={red === index ? "red" : ""} key={index} onClick={()=>HandleClick(index,item.id)}> {item.data}<Arrow color={red === index} /></li>
                     )
                 })}
             </ul>
