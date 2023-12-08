@@ -11,30 +11,22 @@ type Props = {
 };
 
 export const PageHeadInfo = (props: Props) => {
-  const [isClient, setIsClient] = useState(false);
-
+  const [resultRouter, setResultRouter]: any = useState([]);
   useEffect(() => {
-    setIsClient(true);
+    const router = window.location.pathname
+    setResultRouter(router.split("/").filter(Boolean));
   }, []);
-  const router = usePathname();
-  const resultRouter = router.split("/").filter(Boolean);
 
   return (
     <section className="page-head-info">
-      {isClient ? (
-        <>
-          {/* <h1>{props.text}</h1>
-          <span>
-            <p>Главная</p>
-            <Arrow />
-            {resultRouter[0] == "product" ? <p>Продукт:</p> : <p>Каталог</p>}
-            <Arrow />
-            <p>{resultRouter[1] ? <p>{resultRouter[1]}</p> : <></>}</p>
-          </span> */}
-        </>
-      ) : (
-        <></>
-      )}
+      <h1>{props.text}</h1>
+      <span>
+        <p>Главная</p>
+        <Arrow />
+        {resultRouter[0] == "product" ? <p>Продукт:</p> : <p>Каталог</p>}
+        <Arrow />
+        <p>{resultRouter[1] ? resultRouter[1] : ""}</p>
+      </span>
     </section>
   );
 };

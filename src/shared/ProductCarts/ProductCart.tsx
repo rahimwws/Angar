@@ -6,6 +6,7 @@ import { Heart } from "./assets/Heart";
 import { Star } from "./assets/Star";
 import { Button } from "../Button/Button";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 type Props = {
   name: string;
@@ -21,8 +22,13 @@ export const ProductCart = (props: Props) => {
   const ChangeSale = (sale: number) => {
     return Math.trunc(Number(props.price) + Number(sale));
   };
+  
+
+  
+  
+  
   return (
-    <Link href={`/product/${props.link}`}>
+    <Link href={`/product/${props.link}`} >
       <div className="product-cart">
         <div className="head">
           <div className={props.sale != 0 ? "sale" : ""}>

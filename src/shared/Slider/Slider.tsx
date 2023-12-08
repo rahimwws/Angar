@@ -4,8 +4,17 @@ import React, { useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 
 import "./Slider.scss";
+import Image from "next/image";
 
-type Props = {};
+import angar_1 from "./assets/1.png";
+import angar_2 from "./assets/2.png";
+import angar_3 from "./assets/3.png";
+import ads from "./assets/ads.webp"
+
+
+type Props = {
+  main: boolean;
+};
 
 export const Slider = (props: Props) => {
   const [emblaRef, emblaApi] = useEmblaCarousel();
@@ -19,15 +28,28 @@ export const Slider = (props: Props) => {
 
   return (
     <section className="slider-section">
-
       <div className="slider">
         <div className="embla">
           <div className="emblaViewport" ref={emblaRef}>
-            <div className="emblaContainer">
-              <div className="emblaSlide">Slide 1</div>
-              <div className="emblaSlide">Slide 2</div>
-              <div className="emblaSlide">Slide 3</div>
-            </div>
+            {props.main ? (
+              <div className="emblaContainer">
+                <div className="emblaSlide">
+                  <Image src={angar_1} alt="angar" fill />
+                </div>
+                <div className="emblaSlide">
+                  <Image src={angar_2} alt="angar" fill />
+                </div>
+                <div className="emblaSlide">
+                  <Image src={angar_3} alt="angar" fill />
+                </div>
+              </div>
+            ) : (
+              <div className="emblaContainer">
+                <div className="emblaSlide">
+                  <Image src={ads} alt="angar" fill />
+                </div>
+              </div>
+            )}
           </div>
           <div className="assets">
             <button className="emblaPrev" onClick={scrollPrev}>

@@ -6,12 +6,12 @@ export const DetailSort = (data: any) => {
     let price = 0
     let sale = 0
     let img = ""
-    let text= ""
+    let text = dataID?.attributes["product.label"]
+    let description = ""
 
     const MainImgId = dataID?.relationships["media"].data[0]["id"]
 
-    const textId = dataID?.relationships["text"].data[0]["id"]
-
+    const textId = dataID?.relationships["text"].data[0].id
     // let idSecondImg = dataID?.relationships["media"].data[1]["id"]
     // let idThirdImg = dataID?.relationships["media"].data[2]["id"]
 
@@ -23,9 +23,9 @@ export const DetailSort = (data: any) => {
         if (item.id === MainImgId) {
             img = item.attributes["media.url"]
         }
-        if (item.id === textId && item.attributes["type"] != "long") {
-            text= item.attributes["text.label"]
+        if (item.id === textId && item.attributes["text.type"] == "long") {
+            description = item.attributes["text.content"]
         }
     }
-    return [price, sale, img,text]
+    return [price, sale, img, text,description]
 }

@@ -16,11 +16,11 @@ const  Home =async (props: Props) => {
   return (
     <>
       <main className="">
-        <Slider />
+        <Slider main = {true} />
       
         <CatalogSection />
         <RecommendedSection/>
-        <Slider />
+        <Slider main = {false}/>
         <NewProducts/>
         <SaleProducts/>
       </main>

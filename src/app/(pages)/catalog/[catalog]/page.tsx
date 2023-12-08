@@ -9,7 +9,7 @@ type Props = {}
 const CatalogPage = (props: Props) => {
   return (
     <main>
-        {/* <PageHeadInfo text='Каталог'/> */}
+        <PageHeadInfo text='Каталог'/>
         <CatalogPageNav/>
         <CatalogPageProducts/>
     </main>

@@ -11,6 +11,9 @@ footer {
             font-size: 18px;
             color: $white;
         }
+        a{
+            color: $white;
+        }
 
         display: flex;
         align-items: center;
@@ -88,6 +91,10 @@ footer {
             flex-wrap: wrap;
             p{
                 font-size: 12px;
+            }
+            a{
+                font-size: 12px;
+
             }
             .footer-text{
                 flex-basis: 100%;
