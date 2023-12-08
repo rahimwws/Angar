@@ -11,7 +11,7 @@ type Props = {
 
 export const Catalog = (props: Props) => {
   const data = useCatalogItems()
-  // console.log(data[1]);
+  console.log(data[1]);
   
   return (
     <>

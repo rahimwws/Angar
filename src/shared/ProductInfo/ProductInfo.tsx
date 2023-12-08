@@ -25,9 +25,9 @@ export const ProductInfo = (props: Props) => {
   };
   return (
     <div className="product-info">
-      {props.data.slice(1, Slice).map((item) => {
+      {props.data.slice(1, Slice).map((item,key) => {
         return (
-          <div className="product-info-item">
+          <div className="product-info-item" key={key}>
             <p>{item.id}</p>
             <div className="line"></div>
             <span>{item.data}</span>
