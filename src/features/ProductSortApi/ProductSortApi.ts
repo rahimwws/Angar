@@ -1,13 +1,14 @@
 export const ProductSortApi = (item: any, included: any) => {
 
     let price = 0
-    let priceId = item?.relationships["price"].data[0]["id"]
+    let priceId = item?.relationships["price"]?.data[0]["id"]
 
     let img = 0
-    let idNumberImg = item?.relationships["media"].data[0]["id"]
+    let idNumberImg = item?.relationships["media"]?.data[0]["id"]
 
     let stock = 0
-    let idStock = item?.relationships["stock"].data[0]["id"]
+    let idStock = item?.relationships["stock"]?.data[0]["id"]
+    
 
     let catalog = 0
     let initialId = 1

@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "../Button/Button";
 
 type Props = {
@@ -7,11 +7,20 @@ type Props = {
   sale: number;
 };
 import "./style.scss";
+import { useParams } from "next/navigation";
 
 export const ProductPagePrice = (props: Props) => {
+  const [article, setArticle]:any = useState('');
   const [quantity, setquantity] = useState(1);
+  const params = useParams();
+  useEffect(()=>{
+    if(params){
+      setArticle(params.name)
+    }
+
+  },[])
   const ChangeSale = (sale: number) => {
-    if(props.price || sale){
+    if (props.price || sale) {
       return Math.trunc(Number(props.price) + Number(sale));
     }
   };
@@ -19,7 +28,7 @@ export const ProductPagePrice = (props: Props) => {
     <div className="product-page-about">
       {props.price ? (
         <div className="product-page-price">
-          <span className="price-id">Артикул: XJ89YHGO</span>
+          <span className="price-id">Артикул:{article}</span>
           <div className="price">
             <h1>{Math.trunc(quantity * props.price)} TMT</h1>
             <p>{props.sale == 0 ? "" : ChangeSale(props.sale)}</p>
@@ -46,7 +55,7 @@ export const ProductPagePrice = (props: Props) => {
       ) : (
         <></>
       )}
-   
+
       <div className="product-assets">
         <ul>
           <li>

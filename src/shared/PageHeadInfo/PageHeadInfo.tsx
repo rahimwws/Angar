@@ -4,28 +4,44 @@ import React, { useEffect, useState } from "react";
 
 import "./style.scss";
 import { Arrow } from "./assets/Arrow";
-import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 type Props = {
   text: string;
 };
 
 export const PageHeadInfo = (props: Props) => {
+  const routers: any = {
+    contact: "Контакты",
+    catalog: "Каталог",
+    product: "Продукт",
+    services: "Услуги",
+    cart: "Корзина",
+    profile: "Профиль",
+  };
   const [resultRouter, setResultRouter]: any = useState([]);
   useEffect(() => {
-    const router = window.location.pathname
+    const router = window.location.pathname;
     setResultRouter(router.split("/").filter(Boolean));
+
   }, []);
+  
 
   return (
     <section className="page-head-info">
       <h1>{props.text}</h1>
       <span>
-        <p>Главная</p>
+        <Link href="/">Главная</Link>
         <Arrow />
-        {resultRouter[0] == "product" ? <p>Продукт:</p> : <p>Каталог</p>}
-        <Arrow />
-        <p>{resultRouter[1] ? resultRouter[1] : ""}</p>
+        <Link href={`/${resultRouter[0]}`}>{routers[resultRouter[0]]}</Link>
+        {resultRouter[1] ? (
+          <>
+            <Arrow />
+            <p>{resultRouter[1] ? resultRouter[1] : ""}</p>
+          </>
+        ) : (
+          <></>
+        )}
       </span>
     </section>
   );

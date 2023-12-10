@@ -78,7 +78,7 @@ export const MegaMenu = (props: Props) => {
                   fill="black"
                 />
               </svg>{" "}
-              Инструмент
+              Суб-Категория
             </p>
           )}
 

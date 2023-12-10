@@ -19,8 +19,8 @@ export const HeaderInfo = (props: Props) => {
   const [idLang, setIdLang] = useState<number>(0);
   const [idCurrency, setIdCurrency] = useState<number>(0);
   const [isMoreInfo, setIsMoreInfo] = useState(false)
-  const language = ["Русский", "English", "Turkmence"];
-  const currency = ["USD", "TMT"];
+  const language = ["Русский"];
+  const currency = ["TMT"];
   useEffect(() => {
 
     const main: any | HTMLElement = document.querySelector("main");

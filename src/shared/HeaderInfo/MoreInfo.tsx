@@ -38,7 +38,9 @@ export const MoreInfo = (props: Props) => {
             <li onClick={() => props.close(false)}>
               <Link href="/catalog/6">Каталог</Link>
             </li>
-            <li>Контакты</li>
+            <li onClick={() => props.close(false)}>
+              <Link href="/contact">Контакты</Link>
+            </li>
           </ul>
         </div>
         <div className="more-info-assets">
