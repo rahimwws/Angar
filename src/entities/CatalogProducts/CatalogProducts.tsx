@@ -10,9 +10,14 @@ import { useParams } from "next/navigation";
 import { useCatalogProduct } from "@/features/Api/getCatalogProducts/useCatalogProducts";
 
 export const CatalogProducts = (props: Props) => {
-  const params = useParams();
-  
-  const {data} = params.catalog ? useCatalogProduct(Number(params.catalog)) : useDataNew();
+  let params = useParams();
+  if(!params.catalog){
+
+    params = {
+      "catalog":"251"
+    }
+  }
+  const {data} =  useCatalogProduct(Number(params.catalog))
     
   return (
     <section className="catalog-products">

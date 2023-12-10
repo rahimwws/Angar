@@ -33,7 +33,7 @@ export const PageHeadInfo = (props: Props) => {
       <span>
         <Link href="/">Главная</Link>
         <Arrow />
-        <Link href={`/${resultRouter[0]}`}>{routers[resultRouter[0]]}</Link>
+        <Link href={resultRouter[0] == "catalog" ? `/` : `${resultRouter[0]}`}>{routers[resultRouter[0]]}</Link>
         {resultRouter[1] ? (
           <>
             <Arrow />
