@@ -49,7 +49,7 @@ export const ProductPagePrice = (props: Props) => {
               <span>Аренда: </span>
               {props.rent} TMT/{props.isMonth ? "Месяц" : "Час"}
             </p>
-            <p>{props.rentInfo == "Месяц" ? `Минимальный срок аренды - ${props.rentInfo} `  : props.rentInfo}</p>
+            <p>{props.rentInfo == "Месяц" ? `Минимальный срок аренды - ${props.rentInfo} `  :   props.rentInfo}</p>
           </div>
           <div className="quantity">
             <p>Количество:</p>
