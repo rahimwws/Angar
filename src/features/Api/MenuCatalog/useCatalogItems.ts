@@ -10,7 +10,6 @@ export const useCatalogItems = () => {
     let HomeCatalogId = []
     let HomeCatalogText = []
     let TotalItems = []
-    const returningItem = []
     let media = ''
     if (data) {
 
@@ -24,7 +23,7 @@ export const useCatalogItems = () => {
                     FirstName = item.attributes["catalog.label"]                    
                     if (item.relationships) {
 
-                        // media = item.attributes["media.url"]
+                        media = item.relationships["media"].data[0].id
                         // console.log(media);
                         
                         if (Object.keys(item.relationships).includes("catalog")) {
@@ -47,7 +46,12 @@ export const useCatalogItems = () => {
                     }
                 }
             }
-
+            for (const catalog of Total) {
+                if(item.id == catalog.media){
+                    catalog.media = item.attributes["media.preview"]
+                    
+                }
+            }
             const text: Array<any> = []; // Move the text array inside the loop
             for (const catalog of Total) {
                 if (catalog.children.length) {
@@ -101,37 +105,17 @@ export const useCatalogItems = () => {
                             data: catalog.data,
                             id: catalog.id,
                             children: text,
+                            media:""
                         };
                         TotalItemText.push(newTotalItem)
                     }
                 }
             }
-            // let itemsText = []
-            // let text = []
-            // for (const third of TotalItemText) {
-            //     for (const catalog of third.children) {
-            //         for (let iterator of catalog.children) {
-            //             if (item.id == iterator.id) {
-            //                 itemsText.push(item.attributes["catalog.label"])
-            //             }
-            //             // if(typeof iterator === "object"){
-            //             //     console.log('check');                            
-            //             // }
-            //         }
-            //         if (itemsText.length > 0 && !catalog.children.includes(Object)) {
-            //             catalog.children.push(...itemsText)
-            //         } else {
-            //         }
-            //     }
-            //     // for (const catalog of third.children) {
-            //     //     catalog.children.filter((item) => typeof item === "string")
-            //     // }
-            // }
+            
         }
 
     }
-    returningItem.push(Total, TotalItemText)
-    return returningItem
+    return [Total,TotalItemText]
 }
 
 

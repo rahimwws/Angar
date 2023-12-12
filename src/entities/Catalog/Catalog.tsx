@@ -11,21 +11,19 @@ type Props = {
 
 export const Catalog = (props: Props) => {
   const data = useCatalogItems()
-  // console.log(data[0]);
-  
   return (
     <>
       <div className="CatalogSectionItem">
         {data[0].splice(props.begin,props.end).map((item,key)=>{
           return(
-            <CircleCatalog name={item.data} image={image} link={item.id} key={key}/>
+            <CircleCatalog name={item.data} image={`https://angar.ussat.tm/aimeos/${item.media}`} link={item.id} key={key}/>
           )
         })}
       </div>
       <div className="mobile-catalog-section">
       {data[0].splice(1,props.end).map((item,key)=>{
           return(
-            <CircleCatalog name={item.data} image={image} link={item.id} key={key}/>
+            <CircleCatalog name={item.data} image={`https://angar.ussat.tm/aimeos/${item.media}`} link={item.id} key={key}/>
           )
         })}
       </div>

@@ -19,7 +19,6 @@
             font-weight: 500;
             color: $dark-gray;
         }
-
         .price {
             margin: 3% 0;
             display: flex;
@@ -49,7 +48,16 @@
                 border-radius:5px;
             }
         }
+        .rent{
+            margin-bottom: 10px;
+            p{
 
+                font-weight: 500;
+            }
+            span{
+                color: $red;
+            }
+        }
         .quantity {
             display: flex;
             align-items: center;

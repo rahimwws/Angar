@@ -15,7 +15,7 @@ export const CircleCatalog = (props: Props) => {
     <Link href={`/catalog/${props.link}`}>
       <div className="CircleCatalog">
         <div className="image">
-          <Image src={props.image} alt="catalog" />
+          <Image src={props.image} alt="catalog" width={40} height={40}/>
         </div>
 
         <p>{props.name}</p>

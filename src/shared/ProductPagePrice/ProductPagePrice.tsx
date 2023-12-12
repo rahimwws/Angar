@@ -5,20 +5,22 @@ import { Button } from "../Button/Button";
 type Props = {
   price: number;
   sale: number;
+  rent:any,
+  rentInfo:any,
+  isMonth:boolean
 };
 import "./style.scss";
 import { useParams } from "next/navigation";
 
 export const ProductPagePrice = (props: Props) => {
-  const [article, setArticle]:any = useState('');
+  const [article, setArticle]: any = useState("");
   const [quantity, setquantity] = useState(1);
   const params = useParams();
-  useEffect(()=>{
-    if(params){
-      setArticle(params.name)
+  useEffect(() => {
+    if (params) {
+      setArticle(params.name);
     }
-
-  },[])
+  }, []);
   const ChangeSale = (sale: number) => {
     if (props.price || sale) {
       return Math.trunc(Number(props.price) + Number(sale));
@@ -41,6 +43,13 @@ export const ProductPagePrice = (props: Props) => {
                 % off
               </p>
             </div>
+          </div>
+          <div className="rent">
+            <p>
+              <span>Аренда: </span>
+              {props.rent} TMT/{props.isMonth ? "Месяц" : "Час"}
+            </p>
+            <p>{props.rentInfo == "Месяц" ? `Минимальный срок аренды - ${props.rentInfo} `  : props.rentInfo}</p>
           </div>
           <div className="quantity">
             <p>Количество:</p>

@@ -16,13 +16,12 @@ import { MegaMenu } from "@/entities/MegaMenu/MegaMenu";
 import { AuthModal } from "@/entities/AuthModal/AuthModal";
 import Link from "next/link";
 
-type Props = {
-};
+type Props = {};
 
 const Header = (props: Props) => {
   const [isOpenedMain, setIsOpenedsMain] = useState(false);
   const [isAuthModal, setIsAuthModal] = useState(false);
-  
+
   useEffect(() => {
     const main: any | HTMLElement = document.querySelector("main");
     if (isOpenedMain) {
@@ -72,7 +71,8 @@ const Header = (props: Props) => {
               onClick={() =>
                 isAuthModal ? setIsAuthModal(false) : setIsAuthModal(true)
               }
-              width={25} height={25}
+              width={25}
+              height={25}
             />
             <Link href="/cart">
               <Image src={shop} alt="shop" width={20} height={22} />
@@ -81,20 +81,6 @@ const Header = (props: Props) => {
         </div>
         <div className="mobile-catalog-header">
           <button>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="9"
-              viewBox="0 0 20 9"
-              fill="none"
-            >
-              <path
-                d="M1.00073 1.5H19.0007M1.00073 7.5H19.0007"
-                stroke="white"
-                strokeWidth="1.3"
-                strokeLinecap="round"
-              />
-            </svg>
             <Nav openCatalog={setIsOpenedsMain} check={isOpenedMain} />
           </button>
           <SearchInput />
