@@ -6,9 +6,9 @@ export const DetailSort = (data: any) => {
 
     const priceId = dataID?.relationships["price"].data[0]["id"]
     const MainImgId = dataID?.relationships["media"].data[0]["id"]
-    const textId = dataID?.relationships["text"].data[0].id
-    const rentInfoId = dataID?.relationships["text"].data[1].id
-    const rentId = dataID?.relationships["price"].data[1]["id"]
+    const textId = dataID?.relationships["text"].data[0]?.id
+    const rentInfoId = dataID?.relationships["text"].data[1]?.id
+    const rentId = dataID?.relationships["price"].data[1]?.id
 
     let price = 0
     let sale = 0
