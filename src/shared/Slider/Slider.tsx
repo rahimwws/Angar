@@ -6,9 +6,9 @@ import useEmblaCarousel from "embla-carousel-react";
 import "./Slider.scss";
 import Image from "next/image";
 
-import angar_1 from "./assets/1.png";
-import angar_2 from "./assets/2.png";
-import angar_3 from "./assets/3.png";
+import angar_1 from "./assets/1_11zon.webp";
+import angar_2 from "./assets/3_11zon.webp";
+import angar_3 from "./assets/2_11zon.webp";
 import ads from "./assets/ads.webp"
 
 
