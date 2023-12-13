@@ -59,7 +59,7 @@ export const ProductPagePrice = (props: Props) => {
               <button onClick={() => setquantity(quantity + 1)}>+</button>
             </div>
           </div>
-          <Button text="Add +" />
+          <Button text="Добавить" />
         </div>
       ) : (
         <></>

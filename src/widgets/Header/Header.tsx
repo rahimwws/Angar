@@ -75,7 +75,7 @@ const Header = (props: Props) => {
               height={25}
             />
             <Link href="/cart">
-              <Image src={shop} alt="shop" width={20} height={22} />
+              <Image src={shop} alt="shop" width={20} height={20} />
             </Link>
           </div>
         </div>

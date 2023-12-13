@@ -22,11 +22,9 @@ export const PageHeadInfo = (props: Props) => {
   const [resultRouter, setResultRouter]: any = useState([]);
   useEffect(() => {
     const router = window.location.pathname;
-    setResultRouter(router.split("/").filter(Boolean));
+    setResultRouter(router.split("/").filter(Boolean))
 
   }, []);
-  
-
   return (
     <section className="page-head-info">
       <h1>{props.text}</h1>
@@ -36,8 +34,8 @@ export const PageHeadInfo = (props: Props) => {
         <Link href={resultRouter[0] == "catalog" ? `/` : `${resultRouter[0]}`}>{routers[resultRouter[0]]}</Link>
         {resultRouter[1] ? (
           <>
-            <Arrow />
-            <p>{resultRouter[1] ? resultRouter[1] : ""}</p>
+            {/* <Arrow /> */}
+            {/* <p>{resultRouter[1] ? resultRouter[1] : ""}</p> */}
           </>
         ) : (
           <></>

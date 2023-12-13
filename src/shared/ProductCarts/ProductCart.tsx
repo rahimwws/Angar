@@ -64,7 +64,7 @@ export const ProductCart = (props: Props) => {
             </p>
             <p>{props.price} TMT</p>
           </div>
-          <Button text="Add +" />
+          <Button text="Добавить" />
         </div>
       </div>
     </Link>

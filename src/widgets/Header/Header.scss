@@ -26,6 +26,7 @@
                 margin-right: 15px;
                 // border-right: 2px solid $gray;
             }
+            
         }
     }
 }
@@ -49,7 +50,8 @@
                 display: flex;
                 align-items: center;
                 gap: 20px;
-                img:first-child{
+                img:last-child{
+                    margin-top: 5px;
                 }
             }
         }
