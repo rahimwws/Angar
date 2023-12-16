@@ -15,6 +15,20 @@
     flex-direction: column;
     .image{
         align-self: center;
+        position: relative;
+        .saled{
+            transform: rotate(-50deg);
+            padding: 5px 10px;
+            position: absolute;
+            width: max-content;
+            height: max-content;
+            border: 2px solid $red;
+            p{
+                font-weight: 600;
+                font-size: 32px;
+                color: $red;
+            }
+        }
     }
     
     img {

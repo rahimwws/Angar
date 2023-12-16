@@ -1,4 +1,4 @@
-
+@import "../../styles/color.module.scss";
 
 .CircleCatalog {
     cursor: pointer;
@@ -15,28 +15,40 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        transition: .5s all;
     }
-    p{
+
+    .image:hover {
+        border-color: $red;
+        background-color: $red;
+    }
+
+    p {
         text-align: center;
         width: 120px;
-        white-space: nowrap; /* Предотвращает перенос текста на новую строку */
-        overflow: hidden; /* Обрезает текст, который не помещается в контейнер */
+        white-space: nowrap;
+        /* Предотвращает перенос текста на новую строку */
+        overflow: hidden;
+        /* Обрезает текст, который не помещается в контейнер */
         text-overflow: ellipsis
     }
 }
 
-@media screen and (width<=450px) {
-    .CircleCatalog{
 
-        .image{
-            width:70px;
+@media screen and (width<=450px) {
+    .CircleCatalog {
+
+        .image {
+            width: 70px;
             height: 70px;
-            img{
+
+            img {
                 width: 60%;
                 height: auto;
             }
         }
-        p{
+
+        p {
             width: 70px;
             font-size: 11px;
         }

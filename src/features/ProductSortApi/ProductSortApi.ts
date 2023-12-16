@@ -40,7 +40,7 @@ export const ProductSortApi = (item: any, included: any) => {
             price = item.attributes["price.value"]
             sale = Number(item.attributes["price.rebate"])
         }
-        if (item.id === idNumberImg) {
+        if (item.id === idNumberImg && item.type == "media") {
             img = item.attributes["media.url"]
         }
     })

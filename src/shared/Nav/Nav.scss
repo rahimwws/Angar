@@ -5,6 +5,7 @@
         list-style: none;
         display: flex;
         align-items: center;
+        flex-direction: row-reverse;
         li {
             padding: 0 15px;
             float: left;

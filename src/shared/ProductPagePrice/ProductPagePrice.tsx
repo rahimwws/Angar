@@ -7,7 +7,8 @@ type Props = {
   sale: number;
   rent:any,
   rentInfo:any,
-  isMonth:boolean
+  isMonth:boolean,
+  stock:number
 };
 import "./style.scss";
 import { useParams } from "next/navigation";
@@ -31,6 +32,7 @@ export const ProductPagePrice = (props: Props) => {
       {props.price ? (
         <div className="product-page-price">
           <span className="price-id">Артикул:{article}</span>
+          <span className="price-id">Количество на складе:{props.stock}</span>
           <div className="price">
             <h1>{Math.trunc(quantity * props.price)} TMT</h1>
             <p>{props.sale == 0 ? "" : ChangeSale(props.sale)}</p>
@@ -47,7 +49,7 @@ export const ProductPagePrice = (props: Props) => {
           <div className="rent">
             <p>
               <span>Аренда: </span>
-              {props.rent} TMT/{props.isMonth ? "Месяц" : "Час"}
+              {Math.trunc(props.rent)} TMT/{props.isMonth ? "Месяц" : "Час"}
             </p>
             <p>{props.rentInfo == "Месяц" ? `Минимальный срок аренды - ${props.rentInfo} `  :   props.rentInfo}</p>
           </div>

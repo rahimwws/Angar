@@ -39,7 +39,7 @@ export const ProductPageMain = (props: Props) => {
         />
       </div>
       <ProductInfo data={attributes} isSlice={false} />
-      <ProductPagePrice price={item[0]} sale={item[1]} rent = {item[5]} rentInfo = {item[6]} isMonth = {item[7]}/>
+      <ProductPagePrice price={item[0]} sale={item[1]} rent = {item[5]} rentInfo = {item[6]} isMonth = {item[7]} stock = {item[8]}/>
     </div>
   );
 };

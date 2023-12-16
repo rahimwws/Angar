@@ -28,6 +28,8 @@ export const MegaMenu = (props: Props) => {
               open={""}
               data = {data[1]}
               idItem={setMenuID}
+            
+              close = {props.close}
             />
           </div>
           <div>
@@ -108,7 +110,7 @@ export const MegaMenu = (props: Props) => {
                 open={isOpenedNoMain}
                 data = {data[1]}
               idItem={setMenuID}
-
+              close = {props.close}
               />
             </div>
             <div>

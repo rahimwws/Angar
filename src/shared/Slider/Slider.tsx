@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useCallback } from "react";
+import React, { useCallback, useEffect } from "react";
 import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
 
 import "./Slider.scss";
 import Image from "next/image";
@@ -9,8 +10,7 @@ import Image from "next/image";
 import angar_1 from "./assets/1_11zon.webp";
 import angar_2 from "./assets/3_11zon.webp";
 import angar_3 from "./assets/2_11zon.webp";
-import ads from "./assets/ads.webp"
-
+import ads from "./assets/ads.webp";
 
 type Props = {
   main: boolean;
@@ -18,6 +18,7 @@ type Props = {
 
 export const Slider = (props: Props) => {
   const [emblaRef, emblaApi] = useEmblaCarousel();
+
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev();
   }, [emblaApi]);
@@ -26,6 +27,7 @@ export const Slider = (props: Props) => {
     if (emblaApi) emblaApi.scrollNext();
   }, [emblaApi]);
 
+  // Вызываем функцию для установки интервалов
   return (
     <section className="slider-section">
       <div className="slider">

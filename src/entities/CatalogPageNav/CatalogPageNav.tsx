@@ -24,12 +24,12 @@ export const CatalogPageNav = (props: Props) => {
           return <CatalogBlock text={item.data} link = {item.id} key={key} />;
         })}
       </div>
-      <div className="catalog-sort">
+      {/* <div className="catalog-sort">
         <p>
           Сортировать по <CatalogArrow />
         </p>
         <CatalogFormList />
-      </div>
+      </div> */}
     </section>
   );
 };

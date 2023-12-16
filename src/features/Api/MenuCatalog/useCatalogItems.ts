@@ -46,9 +46,11 @@ export const useCatalogItems = () => {
                     }
                 }
             }
+            
             for (const catalog of Total) {
-                if(item.id == catalog.media){
-                    catalog.media = item.attributes["media.preview"]
+                if(item.id == catalog.media && item.type == "media" ){
+                    
+                    catalog.media = item.attributes["media.url"]
                     
                 }
             }
@@ -115,6 +117,7 @@ export const useCatalogItems = () => {
         }
 
     }
+    
     return [Total,TotalItemText]
 }
 

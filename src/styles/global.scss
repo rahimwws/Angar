@@ -24,9 +24,11 @@ body {
     position: relative;
     background-color: $white;
 }
-main{
+
+main {
     flex: 1;
 }
+
 button {
     border: none;
 }
@@ -46,6 +48,44 @@ button {
     filter: blur(10px);
 }
 
-.none{
+.none {
     display: none;
 }
+
+
+// .b24-widget-button-inner-block {
+//     background-color: black !important;
+
+//     border-color: black !important;
+// }
+
+// .b24-widget-button-popup {
+//     background-color: black !important;
+
+//     border-color: black !important;
+
+// }
+
+
+// .b24-widget-button-popup-triangle {
+//     background-color: black !important;
+//     border-color: black !important;
+
+// }
+
+// .b24-widget-button-inner-mask {
+//     background-color: black !important;
+//     border-color: black !important;
+
+// }
+
+// .b24-widget-button-pulse .b24-widget-button-pulse-animate {
+//     background-color: black !important;
+//     border-color: black !important;
+
+// }
+
+// .b24-widget-button-inner-block {
+//     background-color: black !important;
+//     border-color: black !important;
+// }

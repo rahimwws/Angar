@@ -9,7 +9,8 @@ export const DetailSort = (data: any) => {
     const textId = dataID?.relationships["text"].data[0]?.id
     const rentInfoId = dataID?.relationships["text"].data[1]?.id
     const rentId = dataID?.relationships["price"].data[1]?.id
-
+    let stock = 0
+    let idStock = dataID?.relationships["stock"]?.data[0]["id"]
     let price = 0
     let sale = 0
     let img = ""
@@ -23,6 +24,10 @@ export const DetailSort = (data: any) => {
     // let idThirdImg = dataID?.relationships["media"].data[2]["id"]
 
     for (const item of included) {
+        if (item.id == idStock) {
+            stock = item.attributes["stock.stocklevel"]
+
+        }
         if(item.attributes["text.type"] == "rent-time-naming"){
             isMonthRent = true
         }
@@ -44,5 +49,5 @@ export const DetailSort = (data: any) => {
         }
     }
 
-    return [price, sale, img, text, description, rent,rentInfo,isMonthRent]
+    return [price, sale, img, text, description, rent,rentInfo,isMonthRent,stock]
 }

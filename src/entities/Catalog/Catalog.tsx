@@ -11,6 +11,7 @@ type Props = {
 
 export const Catalog = (props: Props) => {
   const data = useCatalogItems()
+  
   return (
     <>
       <div className="CatalogSectionItem">

@@ -19,8 +19,8 @@ export const ProductMainImage = (props: Props) => {
       <Image
         src={props.url}
         alt="product"
-        width={400}
-        height={400}
+        width={500}
+        height={500}
         className="main-image"
         onClick={() =>{
           setSelectedImage(props.url)

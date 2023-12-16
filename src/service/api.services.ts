@@ -16,7 +16,7 @@ class ApiServices {
         return axios.get(`${this.URL}/catalog?id=2&include=catalog,text,media&locale=ru`)
     }
     async getDetailProduct(id: number) {
-        return axios.get(`${this.URL}/product?id=${id}&locale=ru&include=media,price,text,attribute`)
+        return axios.get(`${this.URL}/product?id=${id}&locale=ru&include=media,price,text,attribute,stock`)
     }
     async getCatalogProduct(id: number) {
         return axios.get(`${this.URL}/product?filter[f_catid]=${id}&include=text,media,price,stock,catalog`)

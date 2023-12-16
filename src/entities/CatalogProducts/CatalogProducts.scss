@@ -4,9 +4,17 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 10px;
-    
 }
-
+.catalog-products-section{
+    display: flex;
+    flex-direction: column;
+    .catalog-assets{
+        align-self: center;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+}
 @media screen and (width<450px){
     .catalog-products{
         gap: 10px;

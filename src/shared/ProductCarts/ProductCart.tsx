@@ -6,7 +6,6 @@ import { Heart } from "./assets/Heart";
 import { Star } from "./assets/Star";
 import { Button } from "../Button/Button";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 
 type Props = {
   name: string;
@@ -43,6 +42,12 @@ export const ProductCart = (props: Props) => {
           <Heart />
         </div>
         <div className="image">
+          {props.quantity === 0 ? (
+
+            <div className="saled">
+            <p>Продано</p>
+          </div>
+            ):(<></>)}
           <Image src={props.image} alt="product" width={150} height={150}    />
         </div>
         <div className="quantity">
