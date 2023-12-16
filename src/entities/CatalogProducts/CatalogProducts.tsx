@@ -7,7 +7,6 @@ import "./CatalogProducts.scss";
 import { ProductSortApi } from "@/features/ProductSortApi/ProductSortApi";
 import { useParams, useSearchParams } from "next/navigation";
 import { useCatalogProduct } from "@/features/Api/getCatalogProducts/useCatalogProducts";
-import { useDataNext } from "@/features/Api/getNextProducts";
 import { useRouter } from "next/navigation";
 import { Button } from "@/shared/Button/Button";
 
