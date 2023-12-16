@@ -7,11 +7,9 @@ import "./CatalogProducts.scss";
 import { ProductSortApi } from "@/features/ProductSortApi/ProductSortApi";
 import { useParams, useSearchParams } from "next/navigation";
 import { useCatalogProduct } from "@/features/Api/getCatalogProducts/useCatalogProducts";
-import { useRouter } from "next/navigation";
 import { Button } from "@/shared/Button/Button";
 
 export const CatalogProducts = (props: Props) => {
- 
   let params = useParams();
   if (!params.catalog) {
     params = {
@@ -33,6 +31,10 @@ export const CatalogProducts = (props: Props) => {
     prevUrl
   );
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
+
     if (data) {
       setItems(data?.data);
       setIncluded(data?.included);
@@ -45,48 +47,39 @@ export const CatalogProducts = (props: Props) => {
         setPrevUrl(data?.links["prev"]);
         // console.log(data?.links["next"]);
       }
-    
     }
-    console.log(data);
   }, [data]);
-  
+
   const nextProducts = () => {
     setHasMore(true);
     refetch();
-    window.scrollTo({
-      top: 0,
-    });
   };
-  
+
   const prevProducts = () => {
     setHasMore(false);
-    setHasPrev(true)
+    setHasPrev(true);
     refetch();
-    window.scrollTo({
-      top: 0,
-    });
   };
   return (
     <section className="catalog-products-section">
       <div className="catalog-products">
+        {items?.map((item: any, key: number) => {
+          const includedItems = ProductSortApi(item, included);
 
-      {items?.map((item: any, key: number) => {
-        const includedItems = ProductSortApi(item, included);
-        
-        return (
-          <ProductCart
-          name={item?.attributes["product.label"]}
-          category={includedItems[3]}
-          quantity={includedItems[2]}
-          price={includedItems[1]}
-          key={key}
-          image={`https://angar.ussat.tm/aimeos/${includedItems[0]}`}
-          sale={includedItems[4]}
-          link={includedItems[5]}
-          />
+          return (
+            <ProductCart
+              name={item?.attributes["product.label"]}
+              category={includedItems[3]}
+              quantity={includedItems[2]}
+              price={includedItems[1]}
+              key={key}
+              image={`https://angar.ussat.tm/aimeos/${includedItems[0]}`}
+              sale={includedItems[4]}
+              link={includedItems[5]}
+            />
           );
         })}
-        </div>
+      </div>
 
       <div className="catalog-assets">
         <span onClick={prevProducts}>
