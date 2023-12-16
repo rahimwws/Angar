@@ -12,7 +12,6 @@ import { useRouter } from "next/navigation";
 import { Button } from "@/shared/Button/Button";
 
 export const CatalogProducts = (props: Props) => {
-  const router = useRouter();
  
   let params = useParams();
   if (!params.catalog) {
@@ -49,8 +48,9 @@ export const CatalogProducts = (props: Props) => {
       }
     
     }
+    console.log(data);
   }, [data]);
-
+  
   const nextProducts = () => {
     setHasMore(true);
     refetch();
@@ -60,7 +60,7 @@ export const CatalogProducts = (props: Props) => {
   };
   
   const prevProducts = () => {
-    setHasMore(true);
+    setHasMore(false);
     setHasPrev(true)
     refetch();
     window.scrollTo({

@@ -25,8 +25,7 @@ class ApiServices {
         return axios.get(`${this.URL}/catalog?id=${id}&include=catalog,text&locale=ru`)
     }
     async getNext(url: any) {
-        const response = await axios.get(url);
-        return response.data;
+        return await axios.get(url);
     }
 }
 
