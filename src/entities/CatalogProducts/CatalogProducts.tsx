@@ -60,7 +60,7 @@ export const CatalogProducts = (props: Props) => {
         });
       })}
       <div className="assets">
-        <p onClick={()=>fetchNextPage()} ref={ref}>Load more</p>
+        <p onClick={()=>fetchNextPage()} ref={ref}></p>
       </div>
     </section>
   );
