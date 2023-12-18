@@ -16,21 +16,21 @@ export const ProductMainImage = (props: Props) => {
 
   return (
     <>
-      <Image
-        src={props.url}
-        alt="product"
+        <Image
         width={500}
         height={500}
-        className="main-image"
-        onClick={() =>{
-          setSelectedImage(props.url)
-          setModalOpen(true)
-        }}
-      />
+          src={props.url}
+          alt="product"
+          className="main-image"
+          onClick={() => {
+            setSelectedImage(props.url);
+            setModalOpen(true);
+          }}
+        />
       <ModalImage
-       image={selectedImage}
-       handleCloseClick={setModalOpen}
-       isOpen = {isModalOpen}
+        image={selectedImage}
+        handleCloseClick={setModalOpen}
+        isOpen={isModalOpen}
       />
     </>
   );

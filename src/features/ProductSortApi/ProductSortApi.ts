@@ -29,14 +29,14 @@ export const ProductSortApi = (item: any, included: any) => {
 
 
     included.map((item: any) => {
-        if (item.id === initialId) {
+        if (item.id === initialId && item.type == "catalog") {
             catalog = item.attributes["catalog.label"]
         }
-        if (item.id == idStock) {
+        if (item.id == idStock && item.type == "stock") {
             stock = item.attributes["stock.stocklevel"]
 
         }
-        if (item.id === priceId) {
+        if (item.id === priceId && item.type == "price") {
             price = item.attributes["price.value"]
             sale = Number(item.attributes["price.rebate"])
         }

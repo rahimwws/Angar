@@ -12,6 +12,7 @@ type Props = {
 };
 import "./style.scss";
 import { useParams } from "next/navigation";
+import { formatPrice } from "@/features/utils/formatPrice";
 
 export const ProductPagePrice = (props: Props) => {
   const [article, setArticle]: any = useState("");
@@ -34,7 +35,7 @@ export const ProductPagePrice = (props: Props) => {
           <span className="price-id">Артикул:{article}</span>
           <span className="price-id">Количество на складе:{props.stock}</span>
           <div className="price">
-            <h1>{Math.trunc(quantity * props.price)} TMT</h1>
+            <h1>{formatPrice(Math.trunc(quantity * props.price))} TMT</h1>
             <p>{props.sale == 0 ? "" : ChangeSale(props.sale)}</p>
             <div className={props.sale != 0 ? "sale" : ""}>
               <p className={props.sale != 0 ? "" : "none"}>

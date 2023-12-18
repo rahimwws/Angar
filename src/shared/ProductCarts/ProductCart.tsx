@@ -6,6 +6,7 @@ import { Heart } from "./assets/Heart";
 import { Star } from "./assets/Star";
 import { Button } from "../Button/Button";
 import Link from "next/link";
+import { formatPrice } from "@/features/utils/formatPrice";
 
 type Props = {
   name: string;
@@ -67,7 +68,7 @@ export const ProductCart = (props: Props) => {
             <p className={props.sale != 0 ? "" : "none"}>
               {ChangeSale(props.sale)}
             </p>
-            <p>{props.price} TMT</p>
+            <p>{formatPrice(Math.trunc((props.price)))} TMT</p>
           </div>
           <Button text="Добавить" />
         </div>
