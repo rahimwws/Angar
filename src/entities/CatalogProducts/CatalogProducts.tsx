@@ -31,7 +31,6 @@ export const CatalogProducts = (props: Props) => {
     nextUrl
   );
   useEffect(() => {
-    console.log(nextUrl);
     if (data?.pages) {
       data.pages.map((item: any, key) => {
         if (item.links && item.links["next"]) {
@@ -40,7 +39,6 @@ export const CatalogProducts = (props: Props) => {
       });
     }
   }, [data]);
-  console.log(status);
 
   useEffect(() => {
     if (inView) {

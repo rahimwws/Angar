@@ -20,8 +20,6 @@ class ApiServices {
         return axios.get(`${this.URL}/product?id=${id}&locale=ru&include=media,price,text,attribute,stock`)
     }
     async getCatalogProduct(id: any, url: any) {
-        console.log(url);
-        
         if (url == "") {
             
             let data = await axios.get(`${this.URL}/product?filter[f_catid]=${id}&include=text,media,price,stock,catalog`)

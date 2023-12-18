@@ -15,7 +15,6 @@ export const useCatalogProduct = (id: any, nextUrl: any) => {
         queryFn: queryFn,
         initialPageParam: id,
         getNextPageParam: (lastPage: any,allPages) => {
-            console.log(allPages);
             
             return lastPage
         },
