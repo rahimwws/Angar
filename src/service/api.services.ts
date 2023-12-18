@@ -1,7 +1,8 @@
 import axios from "axios"
+import { ANGAR_URL } from "./Data/angar_url"
 
 class ApiServices {
-    private URL = "https://angar.ussat.tm/jsonapi"
+    private URL = ANGAR_URL
 
     async getRecommended() {
         return axios.get(`${this.URL}/product?filter[f_catid]=134&page[limit]=10&include=text,media,price,stock,catalog`)
@@ -19,6 +20,8 @@ class ApiServices {
         return axios.get(`${this.URL}/product?id=${id}&locale=ru&include=media,price,text,attribute,stock`)
     }
     async getCatalogProduct(id: any, url: any) {
+        console.log(url);
+        
         if (url == "") {
             
             let data = await axios.get(`${this.URL}/product?filter[f_catid]=${id}&include=text,media,price,stock,catalog`)

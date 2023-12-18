@@ -1,0 +1,1 @@
+export const ANGAR_URL = "https://angar.ussat.tm/jsonapi"

@@ -12,37 +12,46 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import apiServices from "@/service/api.services";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { useInView } from "react-intersection-observer";
+import { ANGAR_URL } from "@/service/Data/angar_url";
 
 export const CatalogProducts = (props: Props) => {
   const { ref, inView } = useInView({
     /* Optional options */
   });
   let params = useParams();
-  const [nextUrl,setNextUrl] = useState("")
+  const [nextUrl, setNextUrl] = useState("");
   if (!params.catalog) {
     params = {
       catalog: "251",
     };
   }
-  const { data,fetchNextPage } = useCatalogProduct(Number(params.catalog), nextUrl);
 
-  useEffect(()=>{
-    if(data?.pages){
-      data.pages.map((item:any,key)=>{
-        if(item.links && item.links["next"]){
-          setNextUrl(item.links["next"])
+  const { data, fetchNextPage, status } = useCatalogProduct(
+    Number(params.catalog),
+    nextUrl
+  );
+  useEffect(() => {
+    console.log(nextUrl);
+    if (data?.pages) {
+      data.pages.map((item: any, key) => {
+        if (item.links && item.links["next"]) {
+          setNextUrl(item.links["next"]);
         }
-      })
-      
+      });
     }
-  },[data])
-  useEffect(()=>{
-    fetchNextPage()
-  },[inView])
+  }, [data]);
+  console.log(status);
+
+  useEffect(() => {
+    if (inView) {
+      // Check if in view, and fetch next page
+      fetchNextPage();
+    }
+  }, [inView]);
+
   return (
     <section className="catalog-products">
       {data?.pages.map((items: any) => {
-
         return items?.data.map((product: any, key: number) => {
           const includedItems = ProductSortApi(product, items?.included);
           return (
@@ -60,7 +69,7 @@ export const CatalogProducts = (props: Props) => {
         });
       })}
       <div className="assets">
-        <p onClick={()=>fetchNextPage()} ref={ref}></p>
+        <p onClick={() => fetchNextPage()} ref={ref}></p>
       </div>
     </section>
   );

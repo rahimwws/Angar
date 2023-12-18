@@ -13,8 +13,10 @@ export const useCatalogProduct = (id: any, nextUrl: any) => {
     return useInfiniteQuery({
         queryKey: ['CatalogProducts'],
         queryFn: queryFn,
-        initialPageParam: 1,
-        getNextPageParam: (lastPage: any) => {
+        initialPageParam: id,
+        getNextPageParam: (lastPage: any,allPages) => {
+            console.log(allPages);
+            
             return lastPage
         },
         // select:({data})=>data
