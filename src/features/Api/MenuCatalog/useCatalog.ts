@@ -1,11 +1,13 @@
 import apiServices from "@/service/api.services";
-import { useQuery } from "react-query";
+import { useQuery } from "@tanstack/react-query";
 
 export const useCatalog = () => {
-  return useQuery(
-      ["Catalog"],
-      () => apiServices.getCatalog(), {
-      select: ({ data }) => data
-  }
-  );
+  return useQuery({
+
+    queryKey: ["Catalog"],
+    queryFn: () => apiServices.getCatalog(),
+    select: ({ data }) => data
+
+}
+);
 }  

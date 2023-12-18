@@ -1,20 +1,23 @@
 import apiServices from "@/service/api.services";
-import { useQuery } from "react-query";
+import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
 
-export const useCatalogProduct = (id: number, url: any, check: boolean, prev: boolean, prevUrl: any) => {
-    let queryFn;
+export const useCatalogProduct = (id: any, nextUrl: any) => {
 
-    if (prev) {
-        queryFn = () => apiServices.getNext(prevUrl);
-    }
-    if (check) {
-        queryFn = () => apiServices.getNext(url);
-    } 
-    else {
-        queryFn = () => apiServices.getCatalogProduct(id);
-    }
 
-    return useQuery(["CatalogProducts"], queryFn, {
-        select: ({ data }) => data
-    });
+
+    const queryFn = () => {
+
+        return apiServices.getCatalogProduct(id,nextUrl);
+    };
+
+    return useInfiniteQuery({
+        queryKey: ['CatalogProducts'],
+        queryFn: queryFn,
+        initialPageParam: 1,
+        getNextPageParam: (lastPage: any) => {
+            return lastPage
+        },
+        // select:({data})=>data
+    })
 }
+

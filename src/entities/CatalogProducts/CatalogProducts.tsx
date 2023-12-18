@@ -8,6 +8,9 @@ import { ProductSortApi } from "@/features/ProductSortApi/ProductSortApi";
 import { useParams, useSearchParams } from "next/navigation";
 import { useCatalogProduct } from "@/features/Api/getCatalogProducts/useCatalogProducts";
 import { Button } from "@/shared/Button/Button";
+import InfiniteScroll from "react-infinite-scroll-component";
+import apiServices from "@/service/api.services";
+import { useInfiniteQuery } from "@tanstack/react-query";
 
 export const CatalogProducts = (props: Props) => {
   let params = useParams();
@@ -16,59 +19,40 @@ export const CatalogProducts = (props: Props) => {
       catalog: "251",
     };
   }
-  const [items, setItems] = useState<any>([]);
-  const [included, setIncluded] = useState<any>([]);
-  const [nextUrl, setNextUrl] = useState<string>("");
-  const [prevUrl, setPrevUrl] = useState<string>("");
-  const [hasMore, setHasMore] = useState(false);
-  const [hasPrev, setHasPrev] = useState(false);
+  const { data } = useCatalogProduct(Number(params.catalog), "");
 
-  const { data, refetch } = useCatalogProduct(
-    Number(params.catalog),
-    nextUrl,
-    hasMore,
-    hasPrev,
-    prevUrl
-  );
-  useEffect(() => {
-    window.scrollTo({
-      top: 0,
-    });
+  // const datas = data?.pages.map((items: any):any => {
+  //   console.log(items?.data);
 
-    if (data) {
-      setItems(data?.data);
-      setIncluded(data?.included);
+  //   items?.data.map((product: any, key: number) => {
+  //     const includedItems = ProductSortApi(product, items?.included);
+  //     return (
+  //       <ProductCart
+  //         name={product.attributes["product.label"]}
+  //         category={includedItems[3]}
+  //         quantity={includedItems[2]}
+  //         price={includedItems[1]}
+  //         key={key}
+  //         image={`https://angar.ussat.tm/aimeos/${includedItems[0]}`}
+  //         sale={includedItems[4]}
+  //         link={includedItems[5]}
+  //       />
+  //     );
+  //   });
+  // });
 
-      if (data?.links && data?.links["next"]) {
-        setNextUrl(data?.links["next"]);
-        // console.log(data?.links["next"]);
-      }
-      if (data?.links && data?.links["prev"]) {
-        setPrevUrl(data?.links["prev"]);
-        // console.log(data?.links["next"]);
-      }
-    }
-  }, [data]);
+  console.log(data?.pages);
 
-  const nextProducts = () => {
-    setHasMore(true);
-    refetch();
-  };
-
-  const prevProducts = () => {
-    setHasMore(false);
-    setHasPrev(true);
-    refetch();
-  };
   return (
-    <section className="catalog-products-section">
-      <div className="catalog-products">
-        {items?.map((item: any, key: number) => {
-          const includedItems = ProductSortApi(item, included);
+    <section className="catalog-products">
+      {data?.pages.map((items: any) => {
+        console.log(items?.data);
 
+        return items?.data.map((product: any, key: number) => {
+          const includedItems = ProductSortApi(product, items?.included);
           return (
             <ProductCart
-              name={item?.attributes["product.label"]}
+              name={product.attributes["product.label"]}
               category={includedItems[3]}
               quantity={includedItems[2]}
               price={includedItems[1]}
@@ -78,17 +62,8 @@ export const CatalogProducts = (props: Props) => {
               link={includedItems[5]}
             />
           );
-        })}
-      </div>
-
-      <div className="catalog-assets">
-        <span onClick={prevProducts}>
-          <Button text="<" />
-        </span>
-        <span onClick={nextProducts}>
-          <Button text=">" />
-        </span>
-      </div>
+        });
+      })}
     </section>
   );
 };

@@ -1,11 +1,13 @@
 import apiServices from "@/service/api.services";
-import { useQuery } from "react-query";
+import { useQuery } from "@tanstack/react-query";
 
 export const useLastCatalog = (id:number) => {
-  return useQuery(
-      ["LastCatalog"],
-      () => apiServices.getLastCatalog(id), {
-      select: ({ data }) => data
-  }
-  );
+  return useQuery({
+
+    queryKey: ["LastProduct"],
+    queryFn: () => apiServices.getLastCatalog(id),
+    select: ({ data }) => data
+
+}
+)
 }  

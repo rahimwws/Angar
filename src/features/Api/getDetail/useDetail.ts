@@ -1,11 +1,13 @@
 import apiServices from "@/service/api.services";
-import { useQuery } from "react-query";
+import { useQuery } from "@tanstack/react-query";
 
 export const useDetail = (id:number) => {
-    return useQuery(
-        ["DetailProduct"],
-        () => apiServices.getDetailProduct(id), {
+    return useQuery({
+
+        queryKey: ["DetailProduct"],
+        queryFn: () => apiServices.getDetailProduct(id),
         select: ({ data }) => data
+
     }
-    );
+    )
 }  

@@ -22,7 +22,6 @@ const BitrixButton: React.FC = () => {
     <div>
       {/* Apply the styles to the wrapping div or directly to the button element */}
       <div  >
-        <button>Bitrix Button</button>
       </div>
     </div>
   );

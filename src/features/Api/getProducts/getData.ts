@@ -1,30 +1,35 @@
 import apiServices from "@/service/api.services";
-import { useQuery } from "react-query";
+import { useQuery } from "@tanstack/react-query";
 
 export const useDataRecommended = () => {
-    return useQuery(
-        ["HomeProducts"],
-        () => apiServices.getRecommended(), {
+    return useQuery({
+
+        queryKey: ["HomeProducts"],
+        queryFn: () => apiServices.getRecommended(),
         select: ({ data }) => data
+
     }
     )
 }
 
 
 export const useDataNew = () => {
-    return useQuery(
-        ["NewProducts"],
-        () => apiServices.getNew(), {
+    return useQuery({
+
+        queryKey: ["newProducts"],
+        queryFn: () => apiServices.getNew(),
         select: ({ data }) => data
     }
-    );
+    )
 }
 
 export const useDataSale = () => {
-    return useQuery(
-        ["SaleProducts"],
-        () => apiServices.getSale(), {
+    return useQuery({
+
+        queryKey: ["DataSale"],
+        queryFn: () => apiServices.getSale(),
         select: ({ data }) => data
+
     }
-    );
+    )
 }  

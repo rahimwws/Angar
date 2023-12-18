@@ -18,14 +18,19 @@ class ApiServices {
     async getDetailProduct(id: number) {
         return axios.get(`${this.URL}/product?id=${id}&locale=ru&include=media,price,text,attribute,stock`)
     }
-    async getCatalogProduct(id: number) {
-        return axios.get(`${this.URL}/product?filter[f_catid]=${id}&include=text,media,price,stock,catalog`)
+    async getCatalogProduct(id: any, url: any) {
+        if (url == "") {
+            
+            let data = await axios.get(`${this.URL}/product?filter[f_catid]=${id}&include=text,media,price,stock,catalog`)
+            return data.data
+        } else {
+            let data = await axios.get(`${url}`)
+            return data.data
+        }
     }
+
     async getLastCatalog(id: number) {
         return axios.get(`${this.URL}/catalog?id=${id}&include=catalog,text&locale=ru`)
-    }
-    async getNext(url: any) {
-        return await axios.get(url);
     }
 }
 

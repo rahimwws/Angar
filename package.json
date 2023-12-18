@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.14.1",
     "axios": "^1.6.2",
     "embla-carousel-auto-height": "^8.0.0-rc15",
     "embla-carousel-autoplay": "^8.0.0-rc15",
@@ -18,7 +19,6 @@
     "react-dom": "^18.2.0",
     "react-infinite-scroll-component": "^6.1.0",
     "react-modal": "^3.16.1",
-    "react-query": "^3.39.3",
     "sass": "^1.69.4"
   },
   "devDependencies": {
