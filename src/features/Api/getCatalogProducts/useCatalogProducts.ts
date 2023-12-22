@@ -1,8 +1,7 @@
 import apiServices from "@/service/api.services";
-import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
+import { useInfiniteQuery } from "@tanstack/react-query";
 
-export const useCatalogProduct = (id: any, nextUrl: any,key:any) => {
-
+export const useCatalogProduct = (id: any, nextUrl: any,) => {
 
     const queryFn = () => {
 
@@ -14,14 +13,20 @@ export const useCatalogProduct = (id: any, nextUrl: any,key:any) => {
         queryFn: queryFn,
         initialPageParam: 0,
         getNextPageParam: (lastPage: any, allPages) => {
-            if(nextUrl == ""){
-                allPages.splice(1)        
+            if (nextUrl == "") {
+                allPages.splice(1)
+                return allPages.length + 1
             }
-            return allPages.length+1
-            
+            if (nextUrl == null) {
+                return allPages.slice(0, allPages.length - 1)
+            } else {
+                return allPages.length + 1
+            }
+
+
         },
-        staleTime:1000,
-        
+        staleTime: 1000,
+
         // select:({data})=>data
     })
 }

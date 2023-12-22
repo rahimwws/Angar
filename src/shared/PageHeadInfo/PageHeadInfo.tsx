@@ -18,6 +18,7 @@ export const PageHeadInfo = (props: Props) => {
     services: "Услуги",
     cart: "Корзина",
     profile: "Профиль",
+    search:"Поиск"
   };
   const [resultRouter, setResultRouter]: any = useState([]);
   useEffect(() => {

@@ -2,30 +2,24 @@
 import React, { useState } from "react";
 
 import "./styles/style.scss";
-import { useSearch } from "@/features/Api/getSearch/useSearch";
-import apiServices from "@/service/api.services";
 import { ANGAR_URL } from "@/service/Data/angar_url";
 import axios from "axios";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 type Props = {};
 
 const SearchInput = (props: Props) => {
   const [inputText, setTextInput] = useState("");
-  const [checker, setChecker] = useState(false);
-  const [items, setItems] = useState([]);
+  const router = useRouter()
 
   const HandleText = (e: any) => {
     setTextInput(e.target.value);
   };
   const EnterClick = (e: any) => {
     if (e.key == "Enter") {
-      axios
-        .get(`${ANGAR_URL}/product?filter[%7E%3D][product.label]~=${inputText}`)
-        .then((res) => {
-          setItems(res.data.data);
-        });
-      setChecker(true);
+      router.push(`/search?search=${inputText}`)
+      setTextInput("")
     }
   };
 
@@ -57,26 +51,7 @@ const SearchInput = (props: Props) => {
           onKeyDown={EnterClick}
         />
       </div>
-      {checker ? (
-        <div className="search-items">
-          <ul>
-            {items?.map((item: any, key: number) => {
-              return (
-                <li key={key}>
-                  <Link href={`/product/${item.id}`} onClick={()=>{
-                    setTextInput("")
-                    setChecker(false)}
-                    }>
-                    {item.attributes["product.label"]}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-      ) : (
-        <></>
-      )}
+    
     </div>
   );
 };
