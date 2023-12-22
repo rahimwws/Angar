@@ -33,6 +33,9 @@ class ApiServices {
     async getLastCatalog(id: number) {
         return axios.get(`${this.URL}/catalog?id=${id}&include=catalog,text&locale=ru`)
     }
+    getSearch(name: any) {
+        let  response = axios.get(`${this.URL}/product?filter[%7E%3D][product.label]~=${name}`)
+    }
 }
 
 

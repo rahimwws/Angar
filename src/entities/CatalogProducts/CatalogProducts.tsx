@@ -5,40 +5,58 @@ import React, { useEffect, useState } from "react";
 type Props = {};
 import "./CatalogProducts.scss";
 import { ProductSortApi } from "@/features/ProductSortApi/ProductSortApi";
-import { useParams, useSearchParams } from "next/navigation";
+import { useParams, useRouter, useSearchParams } from "next/navigation";
 import { useCatalogProduct } from "@/features/Api/getCatalogProducts/useCatalogProducts";
 import { Button } from "@/shared/Button/Button";
 import InfiniteScroll from "react-infinite-scroll-component";
 import apiServices from "@/service/api.services";
-import { useInfiniteQuery } from "@tanstack/react-query";
+import {
+  QueryClient,
+  useInfiniteQuery,
+  useQueryClient,
+} from "@tanstack/react-query";
 import { useInView } from "react-intersection-observer";
 import { ANGAR_URL } from "@/service/Data/angar_url";
 
 export const CatalogProducts = (props: Props) => {
-  const { ref, inView } = useInView({
-    /* Optional options */
-  });
+  const router = useRouter();
+  const { ref, inView } = useInView({});
   let params = useParams();
+  const queryClient = useQueryClient();
   const [nextUrl, setNextUrl] = useState("");
-  if (!params.catalog) {
-    params = {
-      catalog: "251",
-    };
-  }
-
-  const { data, fetchNextPage, status } = useCatalogProduct(
+  const [key, setKey] = useState(0);
+  const { data, fetchNextPage, refetch } = useCatalogProduct(
     Number(params.catalog),
-    nextUrl
+    nextUrl,
+    key
   );
   useEffect(() => {
+    if (!params.catalog) {
+      params = {
+        catalog: "251",
+      };
+    } else {
+      setNextUrl("");
+    }
+  }, [params.catalog]);
+
+  useEffect(() => {
+
     if (data?.pages) {
-      data.pages.map((item: any, key) => {
+      // Сбросим предыдущие данные при изменении каталога
+      if (params.catalog !== "251") {
+        setNextUrl("");
+      }
+      
+      data.pages.forEach((item: any) => {
         if (item.links && item.links["next"]) {
           setNextUrl(item.links["next"]);
+        }else{
+          setNextUrl("");
         }
       });
     }
-  }, [data]);
+  }, [data, params.catalog]);
 
   useEffect(() => {
     if (inView) {
