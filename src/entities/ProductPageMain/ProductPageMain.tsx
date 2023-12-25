@@ -11,7 +11,6 @@ import "./style.scss";
 import { useDetail } from "@/features/Api/getDetail/useDetail";
 import { useParams } from "next/navigation";
 import { DetailSort } from "@/features/DetailSort/DetailSort";
-import { useEffect, useState } from "react";
 import { DetailAttribute } from "@/features/DetailSort/DetailAttribute";
 
 type Props = {};
@@ -25,7 +24,7 @@ export const ProductPageMain = (props: Props) => {
     item = DetailSort(data);
     attributes = DetailAttribute(data);
   }
-  
+
   return (
     <div className="product-page-main">
       <div className="images">
@@ -34,12 +33,17 @@ export const ProductPageMain = (props: Props) => {
           <ProductBlockImage />
           <ProductBlockImage /> */}
         </div>
-        <ProductMainImage
-          url={item[2] ? `https://angar.ussat.tm/aimeos/${item[2]}` : ""}
-        />
+        <ProductMainImage url={[item[2], item[9], item[10]]} />
       </div>
       <ProductInfo data={attributes} isSlice={false} />
-      <ProductPagePrice price={item[0]} sale={item[1]} rent = {item[5]} rentInfo = {item[6]} isMonth = {item[7]} stock = {item[8]}/>
+      <ProductPagePrice
+        price={item[0]}
+        sale={item[1]}
+        rent={item[5]}
+        rentInfo={item[6]}
+        isMonth={item[7]}
+        stock={item[8]}
+      />
     </div>
   );
 };
