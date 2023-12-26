@@ -5,7 +5,7 @@ import useEmblaCarousel from "embla-carousel-react";
 
 import "./CatalogSection.scss"
 import { Catalog } from '@/entities/Catalog/Catalog'
-import { MobileCatalog } from '@/entities/Catalog/mobileCatalog';
+import { MobileCatalog } from '@/entities/Catalog/MobileCatalog';
 
 type Props = {}
 
