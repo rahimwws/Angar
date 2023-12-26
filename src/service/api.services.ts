@@ -1,5 +1,5 @@
 import axios from "axios"
-import { ANGAR_URL } from "./Data/angar_url"
+import { ANGAR_URL } from "./Urls/angar_url"
 
 class ApiServices {
     private URL = ANGAR_URL

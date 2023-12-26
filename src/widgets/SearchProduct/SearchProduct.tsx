@@ -1,12 +1,13 @@
 "use client";
 import { ProductSortApi } from "@/features/ProductSortApi/ProductSortApi";
-import { ANGAR_URL } from "@/service/Data/angar_url";
+import { ANGAR_URL } from "@/service/Urls/angar_url";
 import { ProductCart } from "@/shared/ProductCarts/ProductCart";
 import axios from "axios";
 import { useSearchParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
 import "./style.scss";
+import { image_url } from "@/service/Urls/image_url";
 
 type Props = {};
 
@@ -39,7 +40,7 @@ export const SearchProduct = (props: Props) => {
               quantity={includedItems[2]}
               price={includedItems[1]}
               key={key}
-              image={`https://angar.ussat.tm/aimeos/${includedItems[0]}`}
+              image={`${image_url}${includedItems[0]}`}
               sale={includedItems[4]}
               link={includedItems[5]}
             />

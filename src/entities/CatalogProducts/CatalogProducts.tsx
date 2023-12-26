@@ -8,6 +8,7 @@ import { ProductSortApi } from "@/features/ProductSortApi/ProductSortApi";
 import { useParams } from "next/navigation";
 import { useCatalogProduct } from "@/features/Api/getCatalogProducts/useCatalogProducts";
 import { useInView } from "react-intersection-observer";
+import { image_url } from "@/service/Urls/image_url";
 
 export const CatalogProducts = (props: Props) => {
   const { ref, inView } = useInView({});
@@ -67,7 +68,7 @@ export const CatalogProducts = (props: Props) => {
                 quantity={includedItems[2]}
                 price={includedItems[1]}
                 key={key}
-                image={`https://angar.ussat.tm/aimeos/${includedItems[0]}`}
+                image={`${image_url}${includedItems[0]}`}
                 sale={includedItems[4]}
                 link={includedItems[5]}
               />

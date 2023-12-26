@@ -9,6 +9,7 @@ import { ProductSortApi } from "@/features/ProductSortApi/ProductSortApi";
 import {
   useDataRecommended,
 } from "@/features/Api/getProducts/getData";
+import { image_url } from "@/service/Urls/image_url";
 
 type Props = {
 };
@@ -65,7 +66,7 @@ export const RecommendedSection = (props: Props) => {
                 quantity={includedItems[2]}
                 price={includedItems[1]}
                 key={key}
-                image={`https://angar.ussat.tm/aimeos/${includedItems[0]}`}
+                image={`${image_url}/${includedItems[0]}`}
                 sale={includedItems[4]}
                 link={includedItems[5]}
               />

@@ -6,6 +6,7 @@ import Image from "next/image";
 import "./assets/style.scss";
 import { ModalImage } from "@/entities/ProductPageMain/ModalImage";
 import useEmblaCarousel from "embla-carousel-react";
+import { image_url } from "@/service/Urls/image_url";
 
 type Props = {
   url: Array<any>;
@@ -37,12 +38,12 @@ export const ProductMainImage = (props: Props) => {
                       <Image
                         width={300}
                         height={300}
-                        src={`https://angar.ussat.tm/aimeos/${item}`}
+                        src={`${image_url}${item}`}
                         alt="product"
                         className="main-image"
                         onClick={() => {
                           setSelectedImage(
-                            `https://angar.ussat.tm/aimeos/${item}`
+                            `${image_url}${item}`
                           );
                           setModalOpen(true);
                         }}

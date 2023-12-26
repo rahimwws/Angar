@@ -2,9 +2,6 @@
 import React, { useState } from "react";
 
 import "./styles/style.scss";
-import { ANGAR_URL } from "@/service/Data/angar_url";
-import axios from "axios";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 type Props = {};
