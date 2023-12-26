@@ -5,6 +5,7 @@ import useEmblaCarousel from "embla-carousel-react";
 
 import "./CatalogSection.scss"
 import { Catalog } from '@/entities/Catalog/Catalog'
+import { MobileCatalog } from '@/entities/Catalog/mobileCatalog';
 
 type Props = {}
 
@@ -33,8 +34,8 @@ export const CatalogSection = (props: Props) => {
             <div className='CatalogSlider'>
                 <div className="CatalogViewport" ref={emblaRef}>
                     <div className="CatalogContainer">
-                        <Catalog end={8} begin={1}/>
-                        <Catalog end={20} begin={8} />
+                        <Catalog end={8} begin={0}/>
+                        <MobileCatalog end={8} begin={0}/>
                     </div>
                 </div>
                 <div className="assets">
