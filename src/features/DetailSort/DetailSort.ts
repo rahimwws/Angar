@@ -2,14 +2,13 @@
 export const DetailSort = (data: any) => {
     const dataID = data.data
     const included = data.included
+    const images = []
     let extraImageId;
     let extraImageSecondId;
     
-    let extraImage;
-    let extraImageSecond;
 
     const priceId = dataID?.relationships["price"].data[0]["id"]
-    const MainImgId = dataID?.relationships["media"].data[0]["id"]
+    const MainImgId = dataID?.relationships["media"].data
     const textId = dataID?.relationships["text"].data[0]?.id
     const rentInfoId = dataID?.relationships["text"].data[1]?.id
     const rentId = dataID?.relationships["price"].data[1]?.id
@@ -17,7 +16,6 @@ export const DetailSort = (data: any) => {
     let stock = 0
     let price = 0
     let sale = 0
-    let img = ""
     let description = ""
     let rent = ""
     let rentInfo = ""
@@ -32,6 +30,11 @@ export const DetailSort = (data: any) => {
         }
     }
     for (const item of included) {
+        for (const img of MainImgId) {
+            if(item.id === img.id){
+                images.push(item.attributes["media.url"])
+            }
+        }
         if (item.id == idStock) {
             stock = item.attributes["stock.stocklevel"]
 
@@ -49,19 +52,11 @@ export const DetailSort = (data: any) => {
             price = item.attributes["price.value"]
             sale = item.attributes["price.rebate"]
         }
-        if (item.id === MainImgId) {
-            img = item.attributes["media.url"]
-        }
-        if (item.id === extraImageId) {
-            extraImage = item.attributes["media.url"]
-        }
-        if (item.id === extraImageSecondId) {
-            extraImageSecond = item.attributes["media.url"]
-        }
+        
         if (item.id === textId && item.attributes["text.type"] == "long") {
             description = item.attributes["text.content"]
         }
     }
 
-    return [price, sale, img, text, description, rent, rentInfo, isMonthRent, stock,extraImage,extraImageSecond]
+    return [price, sale, images, text, description, rent, rentInfo, isMonthRent, stock]
 }

@@ -29,23 +29,28 @@ export const ProductMainImage = (props: Props) => {
       <div className="embla">
         <div className="emblaViewport" ref={emblaRef}>
           <div className="emblaContainer">
-            {props.url.map((item: any, key: number) => {
-              return (
-                <div className="emblaSlide" key={key}>
-                  <Image
-                    width={300}
-                    height={300}
-                    src={`https://angar.ussat.tm/aimeos/${item}`}
-                    alt="product"
-                    className="main-image"
-                    onClick={() => {
-                      setSelectedImage(`https://angar.ussat.tm/aimeos/${item}`);
-                      setModalOpen(true);
-                    }}
-                  />
-                </div>
-              );
-            })}
+            {props.url &&
+              props.url.map((item: any, key: number) => {
+                if (item) {
+                  return (
+                    <div className="emblaSlide" key={key}>
+                      <Image
+                        width={300}
+                        height={300}
+                        src={`https://angar.ussat.tm/aimeos/${item}`}
+                        alt="product"
+                        className="main-image"
+                        onClick={() => {
+                          setSelectedImage(
+                            `https://angar.ussat.tm/aimeos/${item}`
+                          );
+                          setModalOpen(true);
+                        }}
+                      />
+                    </div>
+                  );
+                }
+              })}
           </div>
         </div>
         <div className="assets">

@@ -33,7 +33,7 @@ export const ProductPageMain = (props: Props) => {
           <ProductBlockImage />
           <ProductBlockImage /> */}
         </div>
-        <ProductMainImage url={[item[2], item[9], item[10]]} />
+        <ProductMainImage url={item[2]} />
       </div>
       <ProductInfo data={attributes} isSlice={false} />
       <ProductPagePrice
