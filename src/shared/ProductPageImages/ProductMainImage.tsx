@@ -8,6 +8,8 @@ import { ModalImage } from "@/entities/ProductPageMain/ModalImage";
 import useEmblaCarousel from "embla-carousel-react";
 import { image_url } from "@/service/Urls/image_url";
 
+import img from "./assets/product.png";
+
 type Props = {
   url: Array<any>;
 };
@@ -36,9 +38,8 @@ export const ProductMainImage = (props: Props) => {
                   return (
                     <div className="emblaSlide" key={key}>
                       <Image
-                        
-                      width={300}
-                      height={300}
+                        width={400}
+                        height={400}
                         src={`${image_url}${item}`}
                         alt="product"
                         className="main-image"

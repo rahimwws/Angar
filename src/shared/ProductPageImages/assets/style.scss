@@ -58,7 +58,6 @@
 
 }
 .main-image {   
-    width: 100%;
     height: auto;
 }
 
@@ -112,6 +111,9 @@
 
 
 @media screen and (width<=450px) {
+    .main-image{
+        width: 300px;
+    }
     .modal-body{
         img{
             width: 90%;
