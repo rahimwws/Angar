@@ -31,9 +31,9 @@ export const CatalogSection = (props: Props) => {
 
     return (
         <section className='catalog-section'>
-            <div className='CatalogSlider'>
-                <div className="CatalogViewport" ref={emblaRef}>
-                    <div className="CatalogContainer">
+            <div className='catalog-slider'>
+                <div className="catalog-viewport" ref={emblaRef}>
+                    <div className="catalog-container">
                         <Catalog end={8} begin={0}/>
                         <MobileCatalog end={8} begin={0}/>
                     </div>

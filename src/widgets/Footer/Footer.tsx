@@ -37,26 +37,7 @@ export const Footer = (props: Props) => {
           <li>Доставка и оплата</li>
           <li>Гарантия</li>
         </ul>
-        <div className="footer-catalog">
-          <p>Каталог</p>
-          <div className="catalog-item">
-            <ul>
-              <li>Запорные Арматуры</li>
-              <li>Запорные Арматуры</li>
-              <li>Запорные Арматуры</li>
-            </ul>
-            <ul>
-              <li>Запорные Арматуры</li>
-              <li>Запорные Арматуры</li>
-              <li>Запорные Арматуры</li>
-            </ul>
-            <ul>
-              <li>Запорные Арматуры</li>
-              <li>Запорные Арматуры</li>
-              <li>Запорные Арматуры</li>
-            </ul>
-          </div>
-        </div>
+        
       </nav>
       <p className="footer-end">© 2023 angar.ussat.com Все права защищены.</p>
     </footer>

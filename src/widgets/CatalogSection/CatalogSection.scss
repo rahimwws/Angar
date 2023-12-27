@@ -3,14 +3,14 @@
 .catalog-section {
     padding: 0 5%;
 
-    .CatalogSlider {
+    .catalog-slider {
 
         margin-top: 5%;
         display: flex;
         flex-direction: column;
         overflow: hidden;
 
-        .CatalogContainer {
+        .catalog-container {
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -19,7 +19,7 @@
         .mobile-catalog-section{
             display: none;
         }
-        .CatalogSectionItem {
+        .catalog-item {
             flex: 0 0 100%;
             min-width: 0;
             display: flex;
@@ -58,11 +58,11 @@
 @media screen and (width<=450px) {
     .catalog-section {
         padding: 0;
-        .CatalogSlider {
-            .CatalogContainer{
+        .catalog-slider {
+            .catalog-container{
                 gap: 20px;
             }
-            .CatalogSectionItem {
+            .catalog-item {
                 display: none;
             }
             .mobile-catalog-section {

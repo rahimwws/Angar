@@ -14,7 +14,7 @@ export const Catalog = (props: Props) => {
   
   return (
     <>
-      <div className="CatalogSectionItem">
+      <div className="catalog-item">
         {data[0].splice(props.begin,props.end).map((item,key)=>{
           return(
             <CircleCatalog name={item.data} image={`${image_url}${item.media}`} link={item.id} key={key}/>

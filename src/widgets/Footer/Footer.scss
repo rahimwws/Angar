@@ -52,7 +52,8 @@ footer {
     .nav-footer{
         display: flex;
         align-items:center;
-        justify-content: space-between;
+        gap: 40px;
+        justify-content: start;
         ul{
             list-style: none;
         }
