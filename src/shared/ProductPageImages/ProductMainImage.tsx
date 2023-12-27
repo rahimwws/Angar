@@ -36,15 +36,14 @@ export const ProductMainImage = (props: Props) => {
                   return (
                     <div className="emblaSlide" key={key}>
                       <Image
-                        width={300}
-                        height={300}
+                        
+                      width={300}
+                      height={300}
                         src={`${image_url}${item}`}
                         alt="product"
                         className="main-image"
                         onClick={() => {
-                          setSelectedImage(
-                            `${image_url}${item}`
-                          );
+                          setSelectedImage(`${image_url}${item}`);
                           setModalOpen(true);
                         }}
                       />

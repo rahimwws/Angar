@@ -28,16 +28,15 @@ export const Footer = (props: Props) => {
       </div>
       <nav className="nav-footer">
         <ul>
-          <li>Контакты</li>
-          <li>О нас</li>
-          <li>Политика конфиденциальности</li>
+          <li>
+            <Link href="/services">Услуги</Link>
+          </li>
+          <li>
+            <Link href="/contact">
+            Контакты
+            </Link>
+            </li>
         </ul>
-        <ul>
-          <li>Услуги</li>
-          <li>Доставка и оплата</li>
-          <li>Гарантия</li>
-        </ul>
-        
       </nav>
       <p className="footer-end">© 2023 angar.ussat.com Все права защищены.</p>
     </footer>

@@ -53,11 +53,12 @@ footer {
         display: flex;
         align-items:center;
         gap: 40px;
-        justify-content: start;
+        justify-content: flex-start;
         ul{
             list-style: none;
         }
-        li {
+        li,a {
+            
             font-size: 18px;
             color: $white;
             margin: 10px 0;
