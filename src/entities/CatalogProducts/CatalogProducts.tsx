@@ -1,6 +1,6 @@
 "use client";
 import { ProductCart } from "@/shared/ProductCarts/ProductCart";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 type Props = {};
 import "./CatalogProducts.scss";
@@ -14,20 +14,11 @@ export const CatalogProducts = (props: Props) => {
   const { ref, inView } = useInView({});
   let params = useParams();
   const [nextUrl, setNextUrl]:any = useState("");
+  
   const { data, fetchNextPage, error, fetchPreviousPage } = useCatalogProduct(
     Number(params.catalog),
     nextUrl
   );
-  useEffect(() => {
-    if (!params.catalog) {
-      params = {
-        catalog: "251",
-      };
-    } else {
-      setNextUrl("");
-    }
-  }, [params.catalog]);
-
   useEffect(() => {
     if (data?.pages) {
       // Сбросим предыдущие данные при изменении каталога
@@ -53,7 +44,7 @@ export const CatalogProducts = (props: Props) => {
         fetchPreviousPage();
       }
     }
-  }, [inView]);
+  }, [inView,fetchNextPage, fetchPreviousPage, nextUrl]);
 
   return (
     <section className="catalog-products">

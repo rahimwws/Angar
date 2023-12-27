@@ -15,7 +15,6 @@ const Nav = (props: Props) => {
   return (
     <nav className='header-nav'>
       <ul>
-        <li>Компания</li>
         <li>
           <Link href="/contact">
           Контакты

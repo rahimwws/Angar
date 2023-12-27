@@ -5,10 +5,10 @@ import { Button } from "../Button/Button";
 type Props = {
   price: number;
   sale: number;
-  rent:any,
-  rentInfo:any,
-  isMonth:boolean,
-  stock:number
+  rent: any;
+  rentInfo: any;
+  isMonth: boolean;
+  stock: number;
 };
 import "./style.scss";
 import { useParams } from "next/navigation";
@@ -16,13 +16,13 @@ import { formatPrice } from "@/features/utils/formatPrice";
 
 export const ProductPagePrice = (props: Props) => {
   const [article, setArticle]: any = useState("");
-  const [quantity, setquantity] = useState(1);
+  const [quantity, setQuantity] = useState(1);
   const params = useParams();
   useEffect(() => {
     if (params) {
       setArticle(params.name);
     }
-  }, []);
+  }, [params]);
   const ChangeSale = (sale: number) => {
     if (props.price || sale) {
       return Math.trunc(Number(props.price) + Number(sale));
@@ -52,14 +52,18 @@ export const ProductPagePrice = (props: Props) => {
               <span>Аренда: </span>
               {Math.trunc(props.rent)} TMT/{props.isMonth ? "Месяц" : "Час"}
             </p>
-            <p>{props.rentInfo == "Месяц" ? `Минимальный срок аренды - ${props.rentInfo} `  :   props.rentInfo}</p>
+            <p>
+              {props.rentInfo == "Месяц"
+                ? `Минимальный срок аренды - ${props.rentInfo} `
+                : props.rentInfo}
+            </p>
           </div>
           <div className="quantity">
             <p>Количество:</p>
             <div className="quantity-buttons">
-              <button onClick={() => setquantity(quantity - 1)}>-</button>
+              <button onClick={() => setQuantity(quantity - 1)}>-</button>
               <span>{quantity}</span>
-              <button onClick={() => setquantity(quantity + 1)}>+</button>
+              <button onClick={() => setQuantity(quantity + 1)}>+</button>
             </div>
           </div>
           <Button text="Добавить" />

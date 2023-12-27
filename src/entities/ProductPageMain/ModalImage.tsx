@@ -18,7 +18,7 @@ export const ModalImage = (props: Props) => {
                 </p>
               </div>
               <div className="modal-body">
-                <Image src={props.image} alt="modal-image" width={600} height={600}/>
+                <Image src={props.image} alt="modal-image" width={400} height={400} priority/>
                 </div>
             </div>
           </div>
