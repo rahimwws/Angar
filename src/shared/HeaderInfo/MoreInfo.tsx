@@ -30,9 +30,8 @@ export const MoreInfo = (props: Props) => {
       <div className="more-info-content">
         <div className="more-info-items">
           <ul>
-            <li>О компании</li>
             <li onClick={() => props.close(false)}>
-              <Link href="/services">Услиги</Link>
+              <Link href="/services">Услуги</Link>
             </li>
             <li>Политика Конфиденциальности</li>
             <li onClick={() => props.close(false)}>
