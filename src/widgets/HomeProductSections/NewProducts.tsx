@@ -10,13 +10,16 @@ import {
   useDataNew,
 } from "@/features/Api/getProducts/getData";
 import { image_url } from "@/service/Urls/image_url";
+import { useAtom } from "jotai";
+import { lang } from "@/service/language/languageID";
+import language from "@/service/language/language";
 
 type Props = {
 };
 
 export const NewProducts = (props: Props) => {
   let { data } = useDataNew();
-
+const [idLang] = useAtom(lang)
   const [emblaRef, emblaApi] = useEmblaCarousel();
   const scrollPrev = useCallback(() => {
     if (emblaApi) {
@@ -33,9 +36,9 @@ export const NewProducts = (props: Props) => {
   return (
     <section className="recommended-section">
       <div className="recommended-text">
-        <h1>Новые товары</h1>
+        <h1>{language.new_products[idLang]}</h1>
         <p>
-          Все{" "}
+          {language.all[idLang]}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"

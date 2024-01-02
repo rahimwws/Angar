@@ -1,3 +1,6 @@
+import language from "@/service/language/language";
+import { lang } from "@/service/language/languageID";
+import { useAtom } from "jotai";
 import Link from "next/link";
 import React from "react";
 
@@ -6,10 +9,11 @@ type Props = {
 };
 
 export const MoreInfo = (props: Props) => {
+  const [idLang] = useAtom(lang)
   return (
     <div className="more-info">
       <div className="more-info-head">
-        <p>Меню</p>
+        <p>{language.menu[idLang]}</p>
         <button onClick={() => props.close(false)}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -21,7 +25,7 @@ export const MoreInfo = (props: Props) => {
             <path
               d="M7.5 0.5L0.5 7.5M0.5 0.5L7.5 7.5"
               stroke="white"
-              strokeLinecap="round"
+              strokeLinecap="round" 
               strokeLinejoin="round"
             />
           </svg>
@@ -31,14 +35,14 @@ export const MoreInfo = (props: Props) => {
         <div className="more-info-items">
           <ul>
             <li onClick={() => props.close(false)}>
-              <Link href="/services">Услуги</Link>
+              <Link href="/services">{language.services[idLang]}</Link>
             </li>
-            <li>Политика Конфиденциальности</li>
+            <li>{language.privacy_policy[idLang]}</li>
             <li onClick={() => props.close(false)}>
-              <Link href="/catalog/6">Каталог</Link>
+              <Link href="/catalog/6">{language.catalog[idLang]}</Link>
             </li>
             <li onClick={() => props.close(false)}>
-              <Link href="/contact">Контакты</Link>
+              <Link href="/contact">{language.contacts[idLang]}</Link>
             </li>
           </ul>
         </div>
@@ -46,11 +50,11 @@ export const MoreInfo = (props: Props) => {
           <Link href="tel:+99312754802">+993 12754802</Link>
           <button>
             {" "}
-            <Link href="tel:+99312754802">Заказать Звонок</Link>
+            <Link href="tel:+99312754802">{language.call[idLang]}</Link>
           </button>
         </div>
       </div>
-      <p>Ежедневно, с 8:00 до 18:00</p>
+      <p>{language.time[idLang]}</p>
     </div>
   );
 };

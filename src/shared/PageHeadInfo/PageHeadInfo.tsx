@@ -5,20 +5,24 @@ import React, { useEffect, useState } from "react";
 import "./style.scss";
 import { Arrow } from "./assets/Arrow";
 import Link from "next/link";
+import { useAtom } from "jotai";
+import { lang } from "@/service/language/languageID";
+import language from "@/service/language/language";
 
 type Props = {
   text: string;
 };
 
 export const PageHeadInfo = (props: Props) => {
+  const [idLang] = useAtom(lang)
   const routers: any = {
-    contact: "Контакты",
-    catalog: "Каталог",
-    product: "Продукт",
-    services: "Услуги",
-    cart: "Корзина",
-    profile: "Профиль",
-    search:"Поиск"
+    contact: language.contacts[idLang],
+    catalog: language.catalog[idLang],
+    product: language.product[idLang],
+    services: language.services[idLang],
+    cart: language.cart[idLang],
+    profile: language.profile[idLang],
+    search:language.search[idLang]
   };
   const [resultRouter, setResultRouter]: any = useState([]);
   useEffect(() => {
@@ -30,7 +34,7 @@ export const PageHeadInfo = (props: Props) => {
     <section className="page-head-info">
       <h1>{props.text}</h1>
       <span>
-        <Link href="/">Главная</Link>
+        <Link href="/">{language.main[idLang]}</Link>
         <Arrow />
         <Link href={resultRouter[0] == "catalog" ? `/` : `${resultRouter[0]}`}>{routers[resultRouter[0]]}</Link>
         {resultRouter[1] ? (

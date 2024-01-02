@@ -2,6 +2,9 @@ import React from 'react'
 
 import "./Nav.scss"
 import Link from 'next/link'
+import language from '@/service/language/language'
+import { useAtom } from 'jotai'
+import { lang } from '@/service/language/languageID'
 
 type Props = {
   check:any,
@@ -9,21 +12,19 @@ type Props = {
 }
 
 const Nav = (props: Props) => {
-  const HandleClick  = ()=>{
-
-  }
+  const [idLang] = useAtom(lang)
   return (
     <nav className='header-nav'>
       <ul>
         <li>
           <Link href="/contact">
-          Контакты
+          {language.contacts[idLang]}
           </Link>
           </li>
         
         <li>
           <Link href="/services">
-          Услуги
+          {language.services[idLang]}
           </Link>
           </li>
         <li onClick={()=>props.check ? props.openCatalog(false) : props.openCatalog(true)}>
@@ -41,7 +42,7 @@ const Nav = (props: Props) => {
                 strokeLinecap="round"
               />
             </svg>
-          Каталог
+          {language.catalog[idLang]}
           </li>
       </ul>
     </nav>

@@ -8,12 +8,15 @@ import { ProductCart } from "@/shared/ProductCarts/ProductCart";
 import { ProductSortApi } from "@/features/ProductSortApi/ProductSortApi";
 import { useDataSale } from "@/features/Api/getProducts/getData";
 import { image_url } from "@/service/Urls/image_url";
+import { useAtom } from "jotai";
+import { lang } from "@/service/language/languageID";
+import language from "@/service/language/language";
 
 type Props = {};
 
 export const SaleProducts = (props: Props) => {
   let { data } = useDataSale();
-
+const [idLang] = useAtom(lang)
   const [emblaRef, emblaApi] = useEmblaCarousel();
   const scrollPrev = useCallback(() => {
     if (emblaApi) {
@@ -30,9 +33,9 @@ export const SaleProducts = (props: Props) => {
   return (
     <section className="recommended-section">
       <div className="recommended-text">
-        <h1>Товары по скидке</h1>
+        <h1>{language.sale_products[idLang]}</h1>
         <p>
-          Все{" "}
+          {language.all[idLang]}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"

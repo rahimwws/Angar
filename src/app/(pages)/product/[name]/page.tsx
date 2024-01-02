@@ -19,7 +19,7 @@ const ProductPage = ({params}:Props) => {
   }
   return (
     <main>
-      <PageHeadInfo text={item[3]}/>
+      <PageHeadInfo text={item[9]}/>
       <ProductPageInfo/>
       <SameProducts/> 
     </main>

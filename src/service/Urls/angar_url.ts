@@ -1,1 +1,1 @@
-export const ANGAR_URL = "https://angar.ussat.tm/jsonapi"
+export const ANGAR_URL = "https://shop2.ussat.tm/jsonapi"

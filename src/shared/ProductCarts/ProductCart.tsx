@@ -7,6 +7,9 @@ import { Star } from "./assets/Star";
 import { Button } from "../Button/Button";
 import Link from "next/link";
 import { formatPrice } from "@/features/utils/formatPrice";
+import { useAtom } from "jotai";
+import { lang } from "@/service/language/languageID";
+import language from "@/service/language/language";
 
 type Props = {
   name: string;
@@ -22,11 +25,7 @@ export const ProductCart = (props: Props) => {
   const ChangeSale = (sale: number) => {
     return Math.trunc(Number(props.price) + Number(sale));
   };
-  
-
-  
-  
-  
+  const [idLang] = useAtom(lang)
   return (
     <Link href={`/product/${props.link}`} >
       <div className="product-cart">
@@ -70,7 +69,7 @@ export const ProductCart = (props: Props) => {
             </p>
             <p>{formatPrice(Math.trunc((props.price)))} TMT</p>
           </div>
-          <Button text="Добавить" />
+          <Button text= {language.add[idLang]}/>
         </div>
       </div>
     </Link>

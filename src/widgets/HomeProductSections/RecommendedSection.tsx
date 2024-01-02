@@ -10,11 +10,15 @@ import {
   useDataRecommended,
 } from "@/features/Api/getProducts/getData";
 import { image_url } from "@/service/Urls/image_url";
+import { useAtom } from "jotai";
+import { lang } from "@/service/language/languageID";
+import language from "@/service/language/language";
 
 type Props = {
 };
 
 export const RecommendedSection = (props: Props) => {
+  const [idLang] = useAtom(lang)
   let { data } = useDataRecommended();
   const [emblaRef, emblaApi] = useEmblaCarousel();
   const scrollPrev = useCallback(() => {
@@ -33,10 +37,10 @@ export const RecommendedSection = (props: Props) => {
     <section className="recommended-section">
       <div className="recommended-text">
         <h1>
-            Рекомендуемые товары
+            {language.recommended_products[idLang]}
         </h1>
         <p>
-          Все{" "}
+          {language.all[idLang]}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"

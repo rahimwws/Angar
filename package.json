@@ -14,6 +14,7 @@
     "embla-carousel-auto-height": "^8.0.0-rc15",
     "embla-carousel-autoplay": "^8.0.0-rc15",
     "embla-carousel-react": "^8.0.0-rc14",
+    "jotai": "^2.6.1",
     "next": "^14.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

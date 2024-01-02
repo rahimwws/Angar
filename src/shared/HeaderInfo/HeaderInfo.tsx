@@ -9,17 +9,18 @@ import Image from "next/image";
 import { Language } from "./assets/svg/Language";
 import { Call } from "./assets/svg/Call";
 import { Currency } from "./assets/svg/Currency";
-import { ChangeLanguage } from "@/features/ChangeLanguage/ChangeLanguage";
 import { ChangeCurrency } from "@/features/ChangeCurrency/ChangeCurrency";
 import Link from "next/link";
 import { MoreInfo } from "./MoreInfo";
+import language from "@/service/language/language";
+import { lang } from "@/service/language/languageID";
+import { useAtom } from "jotai";
 
 type Props = {};
 export const HeaderInfo = (props: Props) => {
-  const [idLang, setIdLang] = useState<number>(0);
+  const [idLang, setIdLang] = useAtom(lang);
   const [idCurrency, setIdCurrency] = useState<number>(0);
   const [isMoreInfo, setIsMoreInfo] = useState(false)
-  const language = ["Русский"];
   const currency = ["TMT"];
   useEffect(() => {
 
@@ -33,6 +34,7 @@ export const HeaderInfo = (props: Props) => {
       main.classList.remove("modal-effect")
     }
   })
+  
   return (
     <>
       <div className="header-info">
@@ -43,7 +45,7 @@ export const HeaderInfo = (props: Props) => {
           </span>
           <span className="location">
             <Image src={location} alt="location" />
-            <p>г. Ашхабад,Г. Кулиев{"(2127)"},41</p>
+            <p>{language.address[idLang]}</p>
           </span>
         </div>
         <div className="header-info-navbar" onClick={() => setIsMoreInfo(!isMoreInfo)}>
@@ -65,10 +67,10 @@ export const HeaderInfo = (props: Props) => {
           </span>
           <span
             className="language"
-            onClick={() => setIdLang(ChangeLanguage(idLang))}
+            onClick={() => idLang == 1 ? setIdLang(0) : setIdLang(1)}
           >
             <Language />
-            <p>{language[idLang]}</p>
+            <p>{language.language[idLang]}</p>
           </span>
         </div>
       </div>

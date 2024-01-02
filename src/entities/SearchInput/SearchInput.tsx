@@ -3,10 +3,14 @@ import React, { useState } from "react";
 
 import "./styles/style.scss";
 import { useRouter } from "next/navigation";
+import language from "@/service/language/language";
+import { useAtom } from "jotai";
+import { lang } from "@/service/language/languageID";
 
 type Props = {};
 
 const SearchInput = (props: Props) => {
+  const [idLang] = useAtom(lang)
   const [inputText, setTextInput] = useState("");
   const router = useRouter()
 
@@ -42,7 +46,7 @@ const SearchInput = (props: Props) => {
         <input
           type="text"
           className="input"
-          placeholder="Поиск"
+          placeholder={language.search[idLang]}
           value={inputText}
           onChange={HandleText}
           onKeyDown={EnterClick}

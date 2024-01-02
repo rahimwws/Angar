@@ -5,7 +5,7 @@ export const DetailSort = (data: any) => {
     const images = []
     let extraImageId;
     let extraImageSecondId;
-    
+
 
     const priceId = dataID?.relationships["price"].data[0]["id"]
     const MainImgId = dataID?.relationships["media"].data
@@ -20,18 +20,19 @@ export const DetailSort = (data: any) => {
     let rent = ""
     let rentInfo = ""
     let isMonthRent = false
+    let name = ""
     const text = dataID?.attributes["product.label"]
 
     // let idThirdImg = dataID?.relationships["media"].data[2]["id"]
     if (dataID?.relationships["media"].data.length > 1) {
         extraImageId = dataID?.relationships["media"].data[1]["id"]
         if (dataID?.relationships["media"].data.length > 2) {
-        extraImageSecondId = dataID?.relationships["media"].data[2]["id"]
+            extraImageSecondId = dataID?.relationships["media"].data[2]["id"]
         }
     }
     for (const item of included) {
         for (const img of MainImgId) {
-            if(item.id === img.id){
+            if (item.id === img.id) {
                 images.push(item.attributes["media.url"])
             }
         }
@@ -52,11 +53,14 @@ export const DetailSort = (data: any) => {
             price = item.attributes["price.value"]
             sale = item.attributes["price.rebate"]
         }
-        
+
         if (item.id === textId && item.attributes["text.type"] == "long") {
             description = item.attributes["text.content"]
         }
+        if(item.id ===textId && item.attributes["text.type"] == "name" ){
+            name= item.attributes["text.content"]
+        }
     }
 
-    return [price, sale, images, text, description, rent, rentInfo, isMonthRent, stock]
+    return [price, sale, images, text, description, rent, rentInfo, isMonthRent, stock,name]
 }
